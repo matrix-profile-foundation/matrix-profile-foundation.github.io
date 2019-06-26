@@ -5,14 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css">
 
     <title>Matrix Profile Foundation</title>
 </head>
 <body>
-    <main class="container py-4">
-        <section class="d-flex flex-row align-items-center">
-            <img class="img-fluid" src="http://placehold.it/500x340" alt="logo">
+    <main class="container pt-4 pb-5">
+        <div class="row mt-5 mb-4 mb-lg-0">
+            <div class="col text-center">
+                <h1>Matrix Profile Foundation</h1>
+            </div>
+        </div>
+        <section class="d-flex flex-column flex-lg-row align-items-center">
+            <img class="img-fluid" src="static/img/mpf-logo.png" alt="logo">
             <div class="m-5">
                 <h2 class="font-weight-light">Mission Statement</h2>
                 <p>
@@ -21,7 +26,7 @@
                     All code is hosted on our GitHub repos, and additional support is provided through a dedicated Discord channel,
                     e-mail correspondence and GitHub issue tracking. We strive to simplify technical interactions through logical,
                     standardized APIs across all languages. We also believe that a key value for the Matrix Profile is continued education and expert assistance,
-                    particularly for non-technical audiences. We provide interactive resources and tutorials on our website (matrix-profiles.com),
+                    particularly for non-technical audiences. We provide interactive resources and tutorials on our website (<a href="http://matrixprofiles.com">matrixprofiles.com</a>),
                     as well as blog posts and articles containing real-world use cases.
                 </p>
             </div>
@@ -31,41 +36,44 @@
                 <h3>Members</h3>
             </div>
         </div>
-        <hr />
         <section class="row">
             <div class="col-md-3 p-4">
-                <div class="d-flex flex-column align-items-center">
-                    <img class="rounded-circle mb-3" src="http://placehold.it/150x150">
-                    <h5>John Doe</h5>
+                <div class="d-flex flex-column align-items-center text-center">
+                    <img class="img-fluid rounded-circle shadow mb-3" src="static/img/andrew.jpg">
+                    <h5>Andrew Van Benschoten</h5>
                     <p class="text-center">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at aliquam sapien, vitae dictum purus.
+                        Andrew is the founder and co-developer of matrixprofile-ts.
+                        He holds a Ph.D in biophysics from the University of California, San Francisco.
                     </p>
                 </div>
             </div>
             <div class="col-md-3 p-4">
-                <div class="d-flex flex-column align-items-center">
-                    <img class="rounded-circle mb-3" src="http://placehold.it/150x150">
-                    <h5>John Doe</h5>
+                <div class="d-flex flex-column align-items-center text-center">
+                    <img class="img-fluid rounded-circle shadow mb-3" src="static/img/francisco.jpg">
+                    <h5>Francisco Bischoff</h5>
                     <p class="text-center">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at aliquam sapien, vitae dictum purus.
+                        Francisco is the primary developer of the R matrix profile library tsmp.
+                        He holds a Masters in Medical Informatics from Universidade do Porto in Portugal.
                     </p>
                 </div>
             </div>
             <div class="col-md-3 p-4">
-                <div class="d-flex flex-column align-items-center">
-                    <img class="rounded-circle mb-3" src="http://placehold.it/150x150">
-                    <h5>John Doe</h5>
+                <div class="d-flex flex-column align-items-center text-center">
+                    <img class="img-fluid rounded-circle shadow mb-3" src="static/img/tyler.jpg">
+                    <h5>Tyler Marrs</h5>
                     <p class="text-center">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at aliquam sapien, vitae dictum purus.
+                        Tyler is the co-developer of matrixprofile-ts and creator of mass-ts.
+                        He is a Data Scientist in the Iowa City, Iowa area holding a Masters in Software Engineering.
                     </p>
                 </div>
             </div>
             <div class="col-md-3 p-4">
-                <div class="d-flex flex-column align-items-center">
-                    <img class="rounded-circle mb-3" src="http://placehold.it/150x150">
-                    <h5>John Doe</h5>
+                <div class="d-flex flex-column align-items-center text-center">
+                    <img class="img-fluid rounded-circle shadow mb-3" src="static/img/austin.png">
+                    <h5>Austin Ouyang</h5>
                     <p class="text-center">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at aliquam sapien, vitae dictum purus.
+                        Austin is the primary developer for the Golang matrix profile library go-matrixprofile.
+                        He holds a BS in Electrical Engineering from University of Illinois - Urbana Champaign.
                     </p>
                 </div>
             </div>
@@ -75,51 +83,54 @@
                 <h3>Libraries</h3>
             </div>
         </div>
-        <hr />
         <section class="row pb-4">
-            <div class="col">
+            <div class="col-md-4 flex-column text-center">
                 <h5>Python</h5>
-                <p>
-                    <strong>Name</strong> - <a href="#">link</a> - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </p>
-                <p>
-                    <strong>Name</strong> - <a href="#">link</a> - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </p>
-                <p>
-                    <strong>Name</strong> - <a href="#">link</a> - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </p>
+                <a class="font-weight-bold" href="https://github.com/target/matrixprofile-ts">matrixprofile-ts</a>
+                <p>Matrix Profile algorithms implemented in Python.</p>
+                <a class="font-weight-bold" href="https://github.com/matrix-profile-foundation/mass-ts">mass-ts</a>
+                <p>Mueen's Algorithm For Similary Search (MASS) algorithms implemented in Python.</p>
+                <a class="font-weight-bold" href="https://github.com/matrix-profile-foundation/mass-ts-examples">mass-ts-examples</a>
+                <p>Supporting repository for mass-ts providing examples of usage.</p>
             </div>
-        </section>
-        <section class="row pb-4">
-            <div class="col">
+            <div class="col-md-4 flex-column text-center">
                 <h5>R</h5>
-                <p>
-                    <strong>Name</strong> - <a href="#">link</a> - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </p>
+                <a class="font-weight-bold" href="https://github.com/franzbischoff/tsmp">tsmp</a>
+                <p>Matrix Profile algorithms implemented in R.</p>
+            </div>
+            <div class="col-md-4 flex-column text-center">
+                <h5>Go</h5>
+                <a class="font-weight-bold" href="https://github.com/matrix-profile-foundation/go-matrixprofile">go-matrixprofile</a>
+                <p>Matrix Profile algorithms implemented in Golang.</p>
+                <a class="font-weight-bold" href="#">matrix-profiles</a>
+                <p>A Vue.js frontend with a Golang backend providing toy examples of Matrix Profile visualizations.</p>
+            </div>
+        </section>
+        <section class="row mt-5">
+            <div class="col text-center">
+                <h3>Reach Out!</h3>
             </div>
         </section>
         <section class="row pb-4">
-            <div class="col">
-                <h5>Go</h5>
-                <p>
-                    <strong>Name</strong> - <a href="#">link</a> - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </p>
-                <p>
-                    <strong>Name</strong> - <a href="#">link</a> - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </p>
+            <div class="col text-center">
+                <a href="https://discord.gg/vA2BtRT"><img src="static/img/discord-logo.png" alt="discord"/></a>
+                <a href="https://github.com/matrix-profile-foundation"><img src="static/img/github-logo.png" alt="github" /></a>
             </div>
         </section>
-        <hr />
         <section class="row mt-5">
-            <div class="col text-center py-5">
-                <h1 class="display-4 mt-5">Check It Out!</h1>
-                <a href="http://matrixprofiles.com" class="btn btn-primary btn-lg my-5">matrixprofiles.com</a>
+            <div class="col text-center">
+                <h3>Check It Out!</h3>
+                Play around with Matrix Profiles at <a href="http://matrixprofiles.com">matrixprofiles.com</a>
+            </div>
+        </section>
+        <section class="row mt-5">
+            <div class="col text-center">
+                <small class="text-muted">Logo and page design by <a href="mailto:jgreencr@gmail.com">Jackson Green</a></small>
             </div>
         </section>
     </main>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- <script src="static/jquery/jquery-3.3.1.slim.min.js"></script>
+    <script src="static/bootstrap/js/bootstrap.bundle.min.js"></script> -->
 </body>
 </html>
