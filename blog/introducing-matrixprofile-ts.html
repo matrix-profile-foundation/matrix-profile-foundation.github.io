@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+
+<head>
+    <link rel="apple-touch-icon" sizes="57x57" href="../static/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../static/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../static/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../static/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../static/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../static/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../static/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../static/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../static/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="../static/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../static/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../static/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../static/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="static/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css">
+
+    <title>Matrix Profile Foundation</title>
+</head>
+
+<body class="d-flex flex-column h-100">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">Matrix Profile Fondation</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="../index.html">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../libraries.html">Libraries</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../tutorials.html">Tutorials</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../blog.html">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../reach-out.html">Reach Out</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <main class="container pt-4 pb-5">
+        <div class="row mt-4">
+            <div class="col">
+                <h1>
+                    Introducing matrixprofile-ts
+                    <small class="text-muted">A Python Library for Detecting Patterns and Anomalies in Massive
+                        Datasets</small>
+                </h1>
+            </div>
+        </div>
+        <div class="row my-4">
+            <div class="col">
+                <h6>By Andrew Van Benschoten <span class="text-muted">Dec 11, 2018</span></h6>
+            </div>
+        </div>
+        <section class="row">
+            <div class="col">
+                <p>
+                    Time series data is everywhere. From finance to IT to marketing, many companies
+                    produce a myriad of metrics from which they hope to extract valuable insights.
+                    Within Target, our team collects hundreds of thousands of time series from across
+                    the business and monitors them for anomalous events. At the same time, we’re interested
+                    in discovering temporal patterns of behavior. How do milk sales vary throughout the week?
+                    Does our Kubernetes cluster follow a common auto-scaling pattern? This poses a
+                    ignificant challenge: Each of our metrics can be vastly different, whether through
+                    seasonality, trends or overall level.
+                </p>
+                <p>
+                    At the same time, our massive data footprint prevents us from building highly
+                    custom models with many hyper parameters for each metric. We paradoxically need an
+                    algorithm with few parameters that can be implemented at scale and handle a wide
+                    range of time-dependent behaviors.
+                </p>
+                <p>
+                    While there will never be a mathematical silver bullet, we’ve discovered
+                    that the Matrix Profile, a novel algorithm developed by the Keogh research
+                    group at UC-Riverside, is a powerful tool to help solve the dual problems of
+                    anomaly detection and pattern (or “motif”) discovery. Matrix Profile is robust,
+                    scalable and largely parameter-free; we’ve seen it work for a vast range of metrics,
+                    including website user data, order volume and other business-critical applications.
+                </p>
+                <p>
+                    The basics of Matrix Profile are simple: If I take a snippet of my data
+                    and slide it along the rest of the time series, what is the resulting overlap
+                    at each position? More specifically, we can evaluate the Euclidian distance
+                    between a subsequence and every possible time series segment of the same length,
+                    building up what’s known as the subsequences “Distance Profile.” If the
+                    subsequence repeats itself in the data, there will be at least one match and
+                    the minimum Euclidean distance will be zero, or close to zero in the presence of noise.
+                </p>
+                <p>
+                    In contrast, if the subsequence is highly unique (say it contains a significant outlier),
+                    the match will be poor and all overlap scores will be high. Note that the type of
+                    data is irrelevant: We’re only looking at pattern conservation. We then slide
+                    every possible snippet across the time series, building up a collection of Distance Profiles.
+                    By taking the minimum value for each time step across all distance profiles, we can
+                    build the final Matrix Profile.
+                </p>
+                <p>
+                    Both ends of the Matrix Profile value spectrum are useful. High values indicate
+                    uncommon patterns, or anomalous events; in contrast, low values highlight
+                    repeatable motifs and provide valuable insight into your time series of interest.
+                    I’ve only provided a basic overview, so interested readers are encouraged to
+                    investigate the relevant academic papers.
+                </p>
+                <img src="../static/img/mp-overview.png" alt="mp-overview" class="img-fluid mb-3">
+                <p>
+                    Our favorite aspect of Matrix Profile is its speed. This primarily stems
+                    from utilization of the Fast Fourier Transform in calculating Euclidean distances,
+                    but the algorithm can also be parallelized for deployment on GPU hardware.
+                    Additionally, we’ve seen that the Matrix Profile rapidly converges to a final solution:
+                    If further speed-up is desired, random sampling and processing of only 20 percent
+                    of the available data leads to very similar outcomes. Astonishingly, we can process
+                    20 years’ worth of data, sampled every five minutes, in less than 20 seconds.
+                    This speed is critical, as we expect that our data streams will expand in size
+                    by several orders of magnitude.
+                </p>
+                <p>
+                    As Target continues to expand its digital footprint through sales growth,
+                    an increased online presence and advanced logistics, Matrix Profile will help
+                    us be ready for the continued exponential growth of Big Data. To better harness
+                    the power of this algorithm, we’ve created a Python package called matrixprofile-ts
+                    and open-sourced the code on GitHub.
+                </p>
+                <p>
+                    As Matrix Profile is only a few years old, we anticipate continued
+                    development and plan to update this library accordingly; we gladly welcome
+                    both community feedback and development assistance! We also desire to educate
+                    the data science community about this technique through a growing collection
+                    of Jupyter Notebook tutorials. Open-source tools form the backbone of modern analytics,
+                    and we hope this implementation serves other users as effectively as it has served us.
+                </p>
+            </div>
+        </section>
+    </main>
+    <footer class="mt-auto py-3">
+        <div class="container text-center">
+            <small class="text-muted">Logo and page design by <a href="mailto:jgreencr@gmail.com">Jackson Green</a></small>
+        </div>
+    </footer>
+
+    <script src="../static/jquery/jquery-3.3.1.slim.min.js"></script>
+    <script src="../static/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-143395881-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-143395881-1');
+    </script>
+</body>
+
+</html>
