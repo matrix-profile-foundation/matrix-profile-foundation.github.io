@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+
+<head>
+    <link rel="apple-touch-icon" sizes="57x57" href="../static/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../static/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../static/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../static/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../static/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../static/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../static/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../static/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../static/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="../static/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../static/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../static/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../static/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="static/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css">
+
+    <title>Matrix Profile Foundation</title>
+</head>
+
+<body class="d-flex flex-column h-100">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">Matrix Profile Fondation</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="../index.html">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../libraries.html">Libraries</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../tutorials.html">Tutorials</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../blog.html">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../reach-out.html">Reach Out</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <main class="container pt-4 pb-5">
+        <div class="row mt-4">
+            <div class="col">
+                <h1>
+                    Anomaly Detection
+                    <small class="text-muted">Matrix Profile Discords</small>
+                </h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p>
+                    Matrix profiles are used to annotate a time series in a way that makes data mining
+                    tasks within the time series simple. I will not explain what a matrix profile is
+                    within this post. Feel free to visit this page to understand more about them:
+                </p>
+                <p>
+                    <a href="https://www.cs.ucr.edu/~eamonn/MatrixProfile.html" target="_blank">
+                        https://www.cs.ucr.edu/~eamonn/MatrixProfile.html
+                    </a>
+                </p>
+                <p>
+                    During the KDD 2017 conference, I had the pleasure to be introduced to the concept
+                    of the matrix profiles. Unfortunately, at the time all of the code was implemented
+                    in MatLab. I dabbled a little bit with converting the code to Python and never
+                    completed it. Last month, December 2018, someone (a Target employee) created a github
+                    repository with working algorithms. Here is the github repository:
+                </p>
+                <p>
+                    <a href="https://github.com/target/matrixprofile-ts" target="_blank">
+                        https://github.com/target/matrixprofile-ts
+                    </a>
+                </p>
+                <p>
+                    My main interest of matrix profiles was the usefulness in anomaly detection.
+                    This blog post is going to demonstrate how to use the Python module to detect
+                    anomalies within a
+                    <a href="https://www.kaggle.com/boltzmannbrain/nab" target="_blank">
+                        NAB dataset.
+                    </a>
+                    Specifically, I am working with the NYC Taxi dataset.
+                </p>
+                <h4>Data Overview</h4>
+                <p>
+                    The data consists of the number of taxi passengers from 2014-07-01 to 2015-01-31.
+                    There are 5 known anomalies during these periods:
+                </p>
+                <ul>
+                    <li>NYC Marathon - 2014-11-02</li>
+                    <li>Thanksgiving - 2014-11-27</li>
+                    <li>Christmas - 2014-12-25</li>
+                    <li>Years - 2015-01-01</li>
+                    <li>Snow Blizzard - 2015-01-26 and 2015-01-27</li>
+                </ul>
+                <p>
+                    I will see how close the anomaly detection is using matrix profiles.
+                </p>
+                <pre class="bg-light rounded p-3"><code>from matrixprofile import *
+from matrixprofile.discords import discords</code></pre>
+                <pre class="bg-light rounded p-3"><code>import pandas as pd
+import numpy as np
+from matplotlib import pyplot as plt
+
+%matplotlib inline</code></pre>
+
+                <h4>Load Data</h4>
+                <pre class="bg-light rounded p-3"><code>df = pd.read_csv('/home/tyler/data/nab/realKnownCause/realKnownCause/nyc_taxi.csv')</code></pre>
+                <pre class="bg-light rounded p-3"><code>df['timestamp'] = pd.to_datetime(df['timestamp'])</code></pre>
+                <pre class="bg-light rounded p-3"><code>df = df.set_index('timestamp').sort_index()</code></pre>
+                <pre class="bg-light rounded p-3"><code>df.head()</code></pre>
+                <table class="table table-sm table-striped col-md-4">
+                    <thead>
+                        <tr class="text-center">
+                            <th>timestamp</th>
+                            <th>value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">2014-07-01 00:00:00</th>
+                            <td class="text-right">10844</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2014-07-01 00:30:00</th>
+                            <td class="text-right">8127</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2014-07-01 01:00:00</th>
+                            <td class="text-right">6210</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2014-07-01 01:30:00</th>
+                            <td class="text-right">4656</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2014-07-01 02:00:00</th>
+                            <td class="text-right">3820</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4 class="pt-3">Resample Hourly</h4>
+                <p>Originally the dataset is within 30 minute increments.</p>
+                <pre class="bg-light rounded p-3"><code>df = df.resample('1H').sum()</code></pre>
+                <pre class="bg-light rounded p-3"><code>df.head()</code></pre>
+                <table class="table table-sm table-striped col-md-4">
+                    <thead>
+                        <tr class="text-center">
+                            <th>timestamp</th>
+                            <th>value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">2014-07-01 00:00:00</th>
+                            <td class="text-right">18971</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2014-07-01 01:00:00</th>
+                            <td class="text-right">10866</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2014-07-01 02:00:00</th>
+                            <td class="text-right">6693</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2014-07-01 03:00:00</th>
+                            <td class="text-right">4433</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2014-07-01 04:00:00</th>
+                            <td class="text-right">4379</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <pre class="bg-light rounded p-3"><code>a = df.values.squeeze()
+
+# subsequence length to compute the matrix profile
+# since we have hourly measurements and want to find daily events,
+# we will create a length of 24 - number of hours in a day
+m = 24
+profile = matrixProfile.stomp(a,m)</code></pre>
+                <pre class="bg-light rounded p-3"><code>df['profile'] = np.append(profile[0],np.zeros(m-1)+np.nan)</code></pre>
+                <h4 class="pt-3">Plot Matrix Profile</h4>
+                <p>
+                    Below is a plot of the hourly data and the matrix profile. Visually, you can see
+                    both motifs and discords. We are interested in finding the discords which are
+                    high peaks in the plot. A couple of periods jump out that seem close to
+                    Thanksgiving and the snow storm.
+                </p>
+
+                <pre class="bg-light rounded p-3"><code>#Plot the signal data
+fig, (ax1, ax2) = plt.subplots(2,1,sharex=True,figsize=(15,10))
+df['value'].plot(ax=ax1, title='Raw Data')
+
+#Plot the Matrix Profile
+df['profile'].plot(ax=ax2, c='r', title='Matrix Profile')
+plt.show()</code></pre>
+                <img src="../static/img/anomaly-detection-1.png" alt="mp-plot" class="img-fluid mb-1">
+                <pre class="bg-light rounded p-3"><code># exclude up to a day on the left and right side
+ex_zone = 24
+
+# we look for the 5 events specified in the data explaination
+anoms = discords(df['profile'], ex_zone, k=5)</code></pre>
+                <pre class="bg-light rounded p-3"> <code>df.iloc[anoms]</code></pre>
+                <table class="table table-sm table-striped col-md-4">
+                    <thead>
+                        <tr class="text-center">
+                            <th>timestamp</th>
+                            <th>value</th>
+                            <th>profile</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2015-01-27 09:00:00</td>
+                            <td class="text-right">3874</td>
+                            <td class="text-right">3.275818</td>
+                        </tr>
+                        <tr>
+                            <td>2014-11-02 00:00:00</td>
+                            <td class="text-right">48219</td>
+                            <td class="text-right">2.468237</td>
+                        </tr>
+                        <tr>
+                            <td>2015-01-25 20:00:00</td>
+                            <td class="text-right">29503</td>
+                            <td class="text-right">2.094151</td>
+                        </tr>
+                        <tr>
+                            <td>2014-12-31 23:00:00</td>
+                            <td class="text-right">35978</td>
+                            <td class="text-right">1.803195</td>
+                        </tr>
+                        <tr>
+                            <td>2014-12-24 00:00:00</td>
+                            <td class="text-right">20646</td>
+                            <td class="text-right">1.581157</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4 class="pt-3">Conclusions</h4>
+                <p>
+                    Using the matrix profile to identify discords within the NYC taxi dataset seems fruitful.
+                    All of the anomalies mentioned in the dataset overview were found. At first it can
+                    be a little tricky to think about what subsequence length to use, but once you
+                    understand your problem it becomes clear. I will be using this module more
+                    frequently when I need to identify anomalies in the future.
+                </p>
+            </div>
+        </div>
+    </main>
+    <footer class="mt-auto py-3">
+        <div class="container text-center">
+            <small class="text-muted">Logo and page design by <a href="mailto:jgreencr@gmail.com">Jackson Green</a></small>
+        </div>
+    </footer>
+
+    <script src="../static/jquery/jquery-3.3.1.slim.min.js"></script>
+    <script src="../static/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-143395881-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-143395881-1');
+    </script>
+</body>
+
+</html>
