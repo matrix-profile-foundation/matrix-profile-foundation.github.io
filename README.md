@@ -1,6 +1,6 @@
 # mpf-org
 
-The src branch contains all of the source code to generate the website.
+The src branch contains all of the source code to generate the website while the gh-pages branch contains the live website.
 
 Setup
 -----
