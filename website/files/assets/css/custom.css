@@ -1,4 +1,18 @@
 #logo {
-  height: 75px;
+  height: 50px;
   width: auto;
+}
+
+/* Override nikola_ipython.css */
+div.prompt {
+    display: none;
+}
+
+div.input  {
+    border: none;
+    background-color: none;
+}
+
+div.input * {
+    background-color: none;
 }
