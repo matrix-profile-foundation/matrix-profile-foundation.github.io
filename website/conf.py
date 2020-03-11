@@ -959,24 +959,27 @@ CONTENT_FOOTER = '''
 <p>
 <span class="fa-stack fa-2x">
   <a href="https://twitter.com/matrixprofile">
-    <i class="fa fa-twitter-square fa-stack-2x"></i>
+    <i class="fab fa-twitter fa-2x"></i>
   </a>
 </span>
 <span class="fa-stack fa-2x">
   <a href="https://github.com/matrix-profile-foundation">
-    <i class="fa fa-github-square fa-stack-2x"></i>
+    <i class="fab fa-github fa-2x"></i>
   </a>
 </span>
 <span class="fa-stack fa-2x">
   <a href="https://www.linkedin.com/company/matrix-profile-foundation">
-    <i class="fa fa-square fa-stack-2x"></i>
-    <i class="fa fa-linkedin fa-inverse fa-stack-1x"></i>
+    <i class="fab fa-linkedin fa-2x"></i>
+  </a>
+</span>
+<span class="fa-stack fa-2x">
+  <a href="https://discord.gg/sBhDNXT">
+    <i class="fab fa-discord fa-2x"></i>
   </a>
 </span>
 <span class="fa-stack fa-2x">
   <a href="mailto:tylerwmarrs+mpf@gmail.com">
-    <i class="fa fa-square fa-stack-2x"></i>
-    <i class="fa fa-envelope fa-inverse fa-stack-1x"></i>
+    <i class="fas fa-envelope fa-2x"></i>
   </a>
 </span>
 </p>
@@ -1256,7 +1259,7 @@ COPY_SOURCES = False
 # Extra things you want in the pages HEAD tag. This will be added right
 # before </head>
 # (translatable)
-EXTRA_HEAD_DATA = '<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">'
+EXTRA_HEAD_DATA = '<link rel="stylesheet" href="/assets/css/font-awesome.all.min.css">'
 
 # Google Analytics or whatever else you use. Added to the bottom of <body>
 # in the default template (base.tmpl).
