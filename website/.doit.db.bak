@@ -82,7 +82,7 @@
 'copy_assets:output/assets/css/baguetteBox.min.css', (110592, 443)
 'render_sources:output/pages/theming/index.rst', (111104, 242)
 'render_galleries:output/galleries/demo/tesla4_lg.thumbnail.jpg', (111616, 279)
-'sitemap:output/sitemap.xml', (630272, 8367)
+'sitemap:output/sitemap.xml', (630272, 8363)
 '_scan_locs:sitemap', (627200, 2943)
 'copy_files:output/images/nikola.png', (120320, 256)
 'render_sources:output/pages/quickref/index.rst', (120832, 244)
