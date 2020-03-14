@@ -9,6 +9,12 @@
 {% endif %}
 {% endmacro %}
 
+{% macro html_title_no_link() %}
+{% if title and not post.meta('hidetitle') %}
+    <h1 class="p-name entry-title" itemprop="headline name">{{ post.title()|e }}</h1>
+{% endif %}
+{% endmacro %}
+
 {% macro html_translations(post) %}
     {% if post.translated_to|length > 1 %}
         <div class="metadata posttranslations translations">
@@ -31,6 +37,40 @@
 {% macro html_post_header(post) %}
     <header>
         <h1 class="p-name entry-title"><a href="{{ post.permalink() }}" class="u-url">{{ post.title()|e }}</a></h1>
+        <div class="metadata">            
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                {{ author_helper.author_post_image(post) }}
+                {% if author_pages_generated %}
+                    <a class="u-url" href="{{ _link('author', post.author()) }}">{{ post.author()|e }}</a>
+                {% else %}
+                    {{ post.author()|e }}
+                {% endif %}
+            </span></p>
+            <p class="dateline">
+            <a href="{{ post.permalink() }}" rel="bookmark">
+            <time class="published dt-published" datetime="{{ post.formatted_date('webiso') }}" itemprop="datePublished" title="{{ post.formatted_date(date_format)|e }}">{{ post.formatted_date(date_format)|e }}</time>
+            {% if post.updated and post.updated != post.date %}
+                <span class="updated"> ({{ messages("updated") }}
+                    <time class="updated dt-updated" datetime="{{ post.formatted_updated('webiso') }}" itemprop="dateUpdated" title="{{ post.formatted_updated(date_format)|e }}">{{ post.formatted_updated(date_format)|e }}</time>)</span>
+            {% endif %}
+            </a>
+            </p>
+            {% if not post.meta('nocomments') and site_has_comments %}
+                <p class="commentline">{{ comments.comment_link(post.permalink(), post._base_path) }}
+            {% endif %}
+            {{ html_sourcelink() }}
+            {% if post.meta('link') %}
+                <p class="linkline"><a href="{{ post.meta('link') }}">{{ messages("Original site") }}</a></p>
+            {% endif %}
+            {{ helper.html_tags(post) }}
+        </div>
+        {{ html_translations(post) }}
+    </header>
+{% endmacro %}
+
+{% macro html_post_header_no_link(post) %}
+    <header>
+        <h1 class="p-name entry-title">{{ post.title()|e }}</h1>
         <div class="metadata">            
             <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
                 {{ author_helper.author_post_image(post) }}

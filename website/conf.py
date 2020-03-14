@@ -25,7 +25,10 @@ SITE_URL = "https://matrixprofile.org/"
 # If not set, defaults to SITE_URL
 # BASE_URL = "https://matrixprofile.org/"
 BLOG_EMAIL = "nowhere@mail.com"
-BLOG_DESCRIPTION = "Matrix Profile Foundation website for tutorials, news, etc."  # (translatable)
+BLOG_DESCRIPTION = '''
+Matrix Profile Foundation website for tutorials, news, and applications based 
+on the matrix profile research from UCR research group Eamonn Keogh.
+'''
 
 # Nikola is multilingual!
 #
@@ -139,15 +142,21 @@ TRANSLATIONS_PATTERN = '{path}.{lang}.{ext}'
 
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
-        ("/", "About Us"),
+        ("/", "About"),
         ("/libraries/", "Libraries"),
+        ("/apps/", "Apps"),
         ("/faqs/", "FAQs"),
-        # ("/reach-out/", "Reach Out"),
-        ("/posts/", "Blog"),
-        ("/categories/tutorial/", "Tutorials"),
-        ("/archive.html", "Archive"),
-        # ("/categories/", "Tags"),
-        ("/rss.xml", "RSS feed"),
+        (
+        (
+            ("/posts/", "Recent Posts"),
+            ("/categories/tutorial/", "Tutorials"),
+            ("/archive.html", "Archive"),
+            ("/authors/", "Authors"),
+            ("/categories/", "Tags"),
+            ("/rss.xml", "RSS feed"),
+        ),
+        'Blog'
+        ),
     ),
 }
 
@@ -456,16 +465,14 @@ CATEGORY_OUTPUT_FLAT_HIERARCHY = False
 # and displayed underneath the category list or index page’s title.
 # CATEGORY_DESCRIPTIONS = {
 #    DEFAULT_LANG: {
-#        "blogging": "Meta-blog posts about blogging.",
-#        "open source": "My contributions to my many, varied, ever-changing, and eternal libre software projects."
+#        "tutorial": "Tutorials",
 #    },
 # }
 
 # Set special titles for category pages. The default is "Posts about CATEGORY".
 # CATEGORY_TITLES = {
 #    DEFAULT_LANG: {
-#        "blogging": "Meta-posts about blogging",
-#        "open source": "Posts about open source software"
+#        "tutorial": "Tutorials",
 #    },
 # }
 
@@ -1260,7 +1267,10 @@ COPY_SOURCES = False
 # Extra things you want in the pages HEAD tag. This will be added right
 # before </head>
 # (translatable)
-EXTRA_HEAD_DATA = '<link rel="stylesheet" href="/assets/css/font-awesome.all.min.css">'
+EXTRA_HEAD_DATA = '''
+<meta name="keywords" content="matrix profile,algorithms,motifs,discords,tutorials,anomaly,anomalies,patterns,time-series,time series,segmentation,datamining,data-mining,data science,data analysis" />
+<link rel="stylesheet" href="/assets/css/font-awesome.all.min.css">
+'''
 
 # Google Analytics or whatever else you use. Added to the bottom of <body>
 # in the default template (base.tmpl).
