@@ -20,3 +20,10 @@ div.input  {
 div.input * {
     background-color: none;
 }
+
+span.author-post-image img{
+	margin-top: 5px;
+    height: 75px;
+    width: auto;
+    border-radius: 50%;
+}

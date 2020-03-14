@@ -1409,7 +1409,20 @@ WARN_ABOUT_TAG_METADATA = False
 
 # Put in global_context things you want available on all your templates.
 # It can be anything, data, functions, modules, etc.
-GLOBAL_CONTEXT = {}
+GLOBAL_CONTEXT = {
+
+    # All images rendered for post headers for each author is defined here.
+    # A helper in "author_helper.tmpl" may be used to obtain the image.
+    'author_images': {
+        'Matrix Profile Foundation': '/images/mpf-logo.png',
+        'Tyler Marrs': '/images/tyler.jpg',
+        'Francisco Bischoff': '/images/francisco.jpg',
+        'Frankie Cancino': '/images/frankie.jpg',
+        'Jack Green': '/images/jack.jpg',
+        'Austin Ouyang': '/images/austin.png',
+        'Andrew Van Benschoten': '/images/andrew.jpg',
+    }
+}
 
 # Add functions here and they will be called with template
 # GLOBAL_CONTEXT as parameter when the template is about to be

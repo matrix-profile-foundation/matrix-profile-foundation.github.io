@@ -1,0 +1,5 @@
+{% macro author_post_image(post) %}
+	<span class="author-post-image">
+		<img src="{{ author_images[post.author()] }}" />
+	</span>
+{% endmacro %}
