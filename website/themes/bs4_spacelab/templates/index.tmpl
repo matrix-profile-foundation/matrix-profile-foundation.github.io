@@ -4,8 +4,9 @@
 {% import 'comments_helper.tmpl' as comments with context %}
 {% import 'pagination_helper.tmpl' as pagination with context %}
 {% import 'feeds_translations_helper.tmpl' as feeds_translations with context %}
-{% extends 'base.tmpl' %}
 {% import 'author_helper.tmpl' as author_helper with context %}
+{% import 'post_header.tmpl' as pheader with context %}
+{% extends 'base.tmpl' %}
 
 {% block extra_head %}
     {{ super() }}
@@ -28,31 +29,7 @@
 <div class="postindex">
 {% for post in posts %}
     <article class="h-entry post-{{ post.meta('type') }}" itemscope="itemscope" itemtype="http://schema.org/Article">
-    <header>
-        <h1 class="p-name entry-title"><a href="{{ post.permalink() }}" class="u-url">{{ post.title()|e }}</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-            {{ author_helper.author_post_image(post) }}
-            {% if author_pages_generated %}
-                <a href="{{ _link('author', post.author()) }}">{{ post.author()|e }}</a>
-            {% else %}
-                {{ post.author()|e }}
-            {% endif %}
-            </span></p>
-            <p class="dateline">
-            <a href="{{ post.permalink() }}" rel="bookmark">
-            <time class="published dt-published" datetime="{{ post.formatted_date('webiso') }}" itemprop="datePublished" title="{{ post.formatted_date(date_format)|e }}">{{ post.formatted_date(date_format)|e }}</time>
-            {% if post.updated and post.updated != post.date %}
-                <span class="updated"> ({{ messages("updated") }}
-                    <time class="dt-updated" datetime="{{ post.formatted_updated('webiso') }}" itemprop="dateUpdated" title="{{ post.formatted_updated(date_format)|e }}">{{ post.formatted_updated(date_format)|e }}</time>)</span>
-            {% endif %}
-            </a>
-            </p>
-            {% if not post.meta('nocomments') and site_has_comments %}
-                <p class="commentline">{{ comments.comment_link(post.permalink(), post._base_path) }}
-            {% endif %}
-        </div>
-    </header>
+    {{ pheader.html_post_header(post) }}
     {% if index_teasers %}
     <div class="p-summary entry-summary">
     {{ post.text(teaser_only=True) }}

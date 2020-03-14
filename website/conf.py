@@ -257,7 +257,7 @@ TIMEZONE = "America/Chicago"
 # Date format used to display post dates. (translatable)
 # Used by babel.dates, CLDR style: http://cldr.unicode.org/translation/date-time
 # You can also use 'full', 'long', 'medium', or 'short'
-DATE_FORMAT = 'yyyy-MM-dd'
+DATE_FORMAT = 'MMMM d, yyyy'
 
 # Date format used to display post dates, if local dates are used. (translatable)
 # Used by moment.js: https://momentjs.com/docs/#/displaying/format/
@@ -1414,7 +1414,7 @@ GLOBAL_CONTEXT = {
     # All images rendered for post headers for each author is defined here.
     # A helper in "author_helper.tmpl" may be used to obtain the image.
     'author_images': {
-        'Matrix Profile Foundation': '/images/mpf-logo.png',
+        'Matrix Profile Foundation': '/images/mpf-author-logo.png',
         'Tyler Marrs': '/images/tyler.jpg',
         'Francisco Bischoff': '/images/francisco.jpg',
         'Frankie Cancino': '/images/frankie.jpg',

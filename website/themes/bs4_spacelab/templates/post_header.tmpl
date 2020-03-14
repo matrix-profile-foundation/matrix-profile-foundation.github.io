@@ -28,9 +28,9 @@
     {% endif %}
 {% endmacro %}
 
-{% macro html_post_header() %}
+{% macro html_post_header(post) %}
     <header>
-        {{ html_title() }}
+        <h1 class="p-name entry-title"><a href="{{ post.permalink() }}" class="u-url">{{ post.title()|e }}</a></h1>
         <div class="metadata">            
             <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
                 {{ author_helper.author_post_image(post) }}
@@ -54,8 +54,9 @@
             {% endif %}
             {{ html_sourcelink() }}
             {% if post.meta('link') %}
-                    <p class="linkline"><a href="{{ post.meta('link') }}">{{ messages("Original site") }}</a></p>
+                <p class="linkline"><a href="{{ post.meta('link') }}">{{ messages("Original site") }}</a></p>
             {% endif %}
+            {{ helper.html_tags(post) }}
         </div>
         {{ html_translations(post) }}
     </header>
