@@ -67,14 +67,13 @@ navbar-dark bg-dark
         {{ template_hooks['page_header']() }}
         {% block extra_header %}{% endblock %}
         {% block content %}{% endblock %}
-        <!--End of body content-->
-
-        <footer id="footer">
-            {{ content_footer }}
-            {{ template_hooks['page_footer']() }}
-            {% block extra_footer %}{% endblock %}
-        </footer>
+        <!--End of body content-->        
     </div>
+    <footer id="footer">
+        {{ content_footer }}
+        {{ template_hooks['page_footer']() }}
+        {% block extra_footer %}{% endblock %}
+    </footer>
 </div>
 
 {{ base.late_load_js() }}

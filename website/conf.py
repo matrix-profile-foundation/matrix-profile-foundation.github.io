@@ -963,38 +963,91 @@ LICENSE = ""
 # A small copyright notice for the page footer (in HTML).
 # (translatable)
 CONTENT_FOOTER = '''
-<div class="text-center">
-<p>
-<span class="fa-stack fa-2x">
-  <a href="https://twitter.com/matrixprofile">
-    <i class="fab fa-twitter fa-2x"></i>
-  </a>
-</span>
-<span class="fa-stack fa-2x">
-  <a href="https://github.com/matrix-profile-foundation">
-    <i class="fab fa-github fa-2x"></i>
-  </a>
-</span>
-<span class="fa-stack fa-2x">
-  <a href="https://www.linkedin.com/company/matrix-profile-foundation">
-    <i class="fab fa-linkedin fa-2x"></i>
-  </a>
-</span>
-<span class="fa-stack fa-2x">
-  <a href="https://discord.gg/sBhDNXT">
-    <i class="fab fa-discord fa-2x"></i>
-  </a>
-</span>
-<span class="fa-stack fa-2x">
-  <a href="mailto:tylerwmarrs+mpf@gmail.com">
-    <i class="fas fa-envelope fa-2x"></i>
-  </a>
-</span>
-</p>
-<p>
-  Contents &copy; {date} {author}
-</p>
+<!-- Footer Links -->
+<div class="container-fluid text-center text-md-left">
+
+<!-- Grid row -->
+<div class="row">
+
+  <!-- Grid column -->
+  <div class="col-md-6 mt-md-0 mt-3">
+    <!-- Content -->
+    <h5 class="text-uppercase">Matrix Profile Foundation</h5>
+    <p>Enabling community members to easily interact with the Matrix Profile algorithms through education, support and software.</p>
+  </div>
+  <!-- Grid column -->
+
+  <hr class="clearfix w-100 d-md-none pb-3">
+
+  <!-- Grid column -->
+  <div class="col-md-3 mb-md-0 mb-3">
+
+    <!-- Links -->
+    <h5 class="text-uppercase">Connect</h5>
+    <ul class="list-unstyled">
+      <li>
+        <a href="https://twitter.com/matrixprofile">
+          <i class="fab fa-twitter"></i> Twitter
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/matrix-profile-foundation">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/company/matrix-profile-foundation">
+          <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+      </li>
+      <li>
+        <a href="https://discord.gg/sBhDNXT">
+          <i class="fab fa-discord"></i> Discord
+        </a>
+      </li>
+    </ul>
+
+  </div>
+  <!-- Grid column -->
+
+  <!-- Grid column -->
+  <div class="col-md-3 mb-md-0 mb-3">
+
+    <!-- Links -->
+    <h5 class="text-uppercase">Quick Links</h5>
+
+    <ul class="list-unstyled">
+      <li>
+        <a href="/">About</a>
+      </li>
+      <li>
+        <a href="/libraries/">Libraries</a>
+      </li>
+      <li>
+        <a href="/apps/">Apps</a>
+      </li>
+      <li>
+        <a href="/faqs/">FAQs</a>
+      </li>
+      <li>
+        <a href="/posts/">Blog</a>
+      </li>
+    </ul>
+
+  </div>
+  <!-- Grid column -->
+
 </div>
+<!-- Grid row -->
+
+</div>
+<!-- Footer Links -->
+
+<!-- Copyright -->
+<div class="footer-copyright text-center py-3">
+    &copy; {date} {author}
+</div>
+<!-- Copyright -->
 '''
 
 # Things that will be passed to CONTENT_FOOTER.format().  This is done
@@ -1269,6 +1322,7 @@ COPY_SOURCES = False
 # (translatable)
 EXTRA_HEAD_DATA = '''
 <meta name="keywords" content="matrix profile,algorithms,motifs,discords,tutorials,anomaly,anomalies,patterns,time-series,time series,segmentation,datamining,data-mining,data science,data analysis" />
+<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/font-awesome.all.min.css">
 '''
 

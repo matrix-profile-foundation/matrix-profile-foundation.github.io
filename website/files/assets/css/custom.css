@@ -1,6 +1,7 @@
 /* Various Styles */
 body {
 	color: #333333;
+	font-family: 'Montserrat', sans-serif;
 }
 
 #logo {
@@ -130,4 +131,12 @@ ul.tags {
 	padding-top: 5px;
 	text-align: left;
 	margin-bottom: 0px;
+}
+
+/* FOOTER */
+footer#footer {
+	padding-top: 25px;
+	margin-top: 25px;
+	color: #777;
+	border-top: 1px solid #e5e5e5;
 }
