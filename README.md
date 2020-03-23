@@ -78,7 +78,7 @@ Within the website directory, run the following:
 nikola build
 nikola serve
 ```
-You should be able to view the site on (http://localhost:8000)[http://localhost:8000]
+You should be able to view the site on [http://localhost:8000](http://localhost:8000)
 
 ## Deploying
 When you are happy with your post, you may deploy the website using the command:
