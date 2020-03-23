@@ -2,8 +2,8 @@ name: mpforg
 channels:
   - defaults
 dependencies:
-  - pip=20.0.2=py37_1
-  - python=3.7.6=h0371630_2
+  - pip=20.0.2
+  - python=3.7.6
   - pip:
     - jupyter==1.0.0
     - nikola==8.0.4
