@@ -1,4 +1,4 @@
-![Andrew Van Benschoten](/images/andrew.jpg)
+<img alt="Andrew Van Benschoten" src="/images/andrew.jpg" style="max-width: 300px;">
 
 ## What is your personal & professional background?
 I'm a recovering academic: I earned my Bachelors degree in Biology from MIT, then went to the University of California - San Francisco for a Ph.D in Biophysics. I graduated in 2015, right when data science was emerging as the hot new career in Silicon Valley. Since my thesis leveraged a significant amount of computational biology it seemed like a perfect fit, and I joined the Insight Data Science Fellows program to help with my transition. From there I went to Oracle (digital advertising), Target (data measurement & telemetry plus lots of DevOps) and am now the Head of Data Science at Ovative Group (back to digital advertising).
