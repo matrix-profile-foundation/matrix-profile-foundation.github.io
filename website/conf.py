@@ -157,6 +157,7 @@ NAVIGATION_LINKS = {
         ),
         'Blog'
         ),
+        ("/contact-us/", "Contact Us"),
     ),
 }
 
