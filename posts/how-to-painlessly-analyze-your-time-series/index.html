@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html prefix="
+og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How To Painlessly Analyze Your Time Series | Matrix Profile Foundation</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="https://matrixprofile.org/posts/how-to-painlessly-analyze-your-time-series/">
+<link rel="apple-touch-icon" href="../../favicon/apple-icon-57x57.png" sizes="57x57">
+<link rel="apple-touch-icon" href="../../favicon/apple-icon-60x60.png" sizes="60x60">
+<link rel="apple-touch-icon" href="../../favicon/apple-icon-72x72.png" sizes="72x72">
+<link rel="apple-touch-icon" href="../../favicon/apple-icon-76x76.png" sizes="76x76">
+<link rel="apple-touch-icon" href="../../favicon/apple-icon-114x114.png" sizes="114x114">
+<link rel="apple-touch-icon" href="../../favicon/apple-icon-120x120.png" sizes="120x120">
+<link rel="apple-touch-icon" href="../../favicon/apple-icon-144x144.png" sizes="144x144">
+<link rel="apple-touch-icon" href="../../favicon/apple-icon-152x152.png" sizes="152x152">
+<link rel="apple-touch-icon" href="../../favicon/apple-icon-180x180.png" sizes="180x180">
+<link rel="icon" href="../../favicon/android-icon-192x192.png" sizes="192x192">
+<link rel="icon" href="../../favicon/favicon-32x32.png" sizes="32x32">
+<link rel="icon" href="../../favicon/favicon-96x96.png" sizes="96x96">
+<link rel="icon" href="../../favicon/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="../../favicon/manifest.json" sizes="">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="keywords" content="matrix profile,algorithms,motifs,discords,tutorials,anomaly,anomalies,patterns,time-series,time series,segmentation,datamining,data-mining,data science,data analysis">
+<link href="https://fonts.googleapis.com/css?family=Montserrat&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/font-awesome.all.min.css">
+<meta name="author" content="Andrew Van Benschoten">
+<link rel="prev" href="../meet-andrew-van-benschoten/" title="Meet Andrew Van Benschoten" type="text/html">
+<meta property="og:site_name" content="Matrix Profile Foundation">
+<meta property="og:title" content="How To Painlessly Analyze Your Time Series">
+<meta property="og:url" content="https://matrixprofile.org/posts/how-to-painlessly-analyze-your-time-series/">
+<meta property="og:description" content="We’re surrounded by time series data. From finance to IoT to marketing, many organizations produce thousands of these metrics and mine them to uncover business-critical insights. A Site Reliability En">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2020-03-28T00:00:00-05:00">
+<meta property="article:tag" content="anomalies">
+<meta property="article:tag" content="discords">
+<meta property="article:tag" content="matrixprofile">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="tutorial">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-expand-md static-top mb-4
+navbar-light bg-light
+"><div class="container">
+<!-- This keeps the margins nice -->
+        <a class="navbar-brand" href="https://matrixprofile.org/">
+            <img src="../../images/mpf-logo.png" alt="Matrix Profile Foundation" id="logo" class="d-inline-block align-top"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bs-navbar">
+            <ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a href="../../" class="nav-link">About</a>
+                </li>
+<li class="nav-item">
+<a href="../../libraries/" class="nav-link">Libraries</a>
+                </li>
+<li class="nav-item">
+<a href="../../apps/" class="nav-link">Apps</a>
+                </li>
+<li class="nav-item">
+<a href="../../faqs/" class="nav-link">FAQs</a>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog</a>
+            <div class="dropdown-menu">
+                    <a href="../" class="dropdown-item">Recent Posts</a>
+                    <a href="../../categories/tutorial/" class="dropdown-item">Tutorials</a>
+                    <a href="../../archive.html" class="dropdown-item">Archive</a>
+                    <a href="../../authors/" class="dropdown-item">Authors</a>
+                    <a href="../../categories/" class="dropdown-item">Tags</a>
+                    <a href="../../rss.xml" class="dropdown-item">RSS feed</a>
+            </div>
+                </li>
+<li class="nav-item">
+<a href="../../contact-us/" class="nav-link">Contact Us</a>
+
+                
+            </li>
+</ul>
+<ul class="navbar-nav navbar-right"></ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title">How To Painlessly Analyze Your Time Series</h1>
+        <div class="metadata">            
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                		<span class="author-post-image">
+			<img src="../../images/andrew.jpg"></span>
+
+                    <a class="u-url" href="../../authors/andrew-van-benschoten/">Andrew Van Benschoten</a>
+            </span></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2020-03-28T00:00:00-05:00" itemprop="datePublished" title="March 28, 2020">March 28, 2020</time></a>
+            </p>
+                <p class="commentline">            <a href="#disqus_thread" data-disqus-identifier="cache/posts/how-to-painlessly-analyze-your-time-series.html">Comments</a>
+
+
+            
+                    </p>
+<ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/anomalies/" rel="tag">anomalies</a></li>
+            <li><a class="tag p-category" href="../../categories/discords/" rel="tag">discords</a></li>
+            <li><a class="tag p-category" href="../../categories/matrixprofile/" rel="tag">matrixprofile</a></li>
+            <li><a class="tag p-category" href="../../categories/python/" rel="tag">python</a></li>
+            <li><a class="tag p-category" href="../../categories/tutorial/" rel="tag">tutorial</a></li>
+        </ul>
+</div>
+        
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We’re surrounded by time series data. From finance to IoT to marketing, many organizations produce thousands of these metrics and mine them to uncover business-critical insights. A Site Reliability Engineer might monitor hundreds of thousands of time series streams from a server farm, in the hopes of detecting anomalous events and preventing catastrophic failure. Alternatively, a brick and mortar retailer might care about identifying patterns of customer foot traffic and leveraging them to guide inventory decisions.</p>
+<p>Identifying anomalous events (or “discords”) and repeated patterns (“motifs”) are two fundamental time series tasks. But how does one get started? There are dozens of approaches to both questions, each with unique positives and drawbacks.</p>
+<p>Furthermore, time series data is notoriously hard to analyze, and the explosive growth of the data science community has led to a need for more “black-box” automated solutions that can be leveraged by developers with a wide range of technical backgrounds.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="../../images/intro_img1.png" alt="pic #1"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We at the Matrix Profile Foundation believe there’s an easy answer. While it’s true that there’s no such thing as a free lunch, the Matrix Profile (a data structure &amp; set of associated algorithms developed by the Keogh research group at UC-Riverside) is a powerful tool to help solve this dual problem of anomaly detection and motif discovery. Matrix Profile is robust, scalable, and largely parameter-free: we’ve seen it work for a wide range of metrics including website user data, order volume and other business-critical applications.</p>
+<p>As we will detail below, the Matrix Profile Foundation has implemented the Matrix Profile across three of the most common data science languages (Python, R and Golang) as an easy-to-use API that’s relevant for time series novices and experts alike</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="So-What-is-the-Matrix-Profile?">So What is the Matrix Profile?<a class="anchor-link" href="#So-What-is-the-Matrix-Profile?">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The basics of Matrix Profile are simple: If I take a snippet of my data and slide it along the rest of the time series, how well does it overlap at each new position? More specifically, we can evaluate the Euclidean distance between a subsequence and every possible time series segment of the same length, building up what’s known as the snippet’s “Distance Profile.”</p>
+<p>If the subsequence repeats itself in the data, there will be at least one perfect match and the minimum Euclidean distance will be zero (or close to zero in the presence of noise). In contrast, if the subsequence is highly unique (say it contains a significant outlier), matches will be poor and all overlap scores will be high. Note that the type of data is irrelevant: We’re only looking at general pattern conservation.</p>
+<p>We then slide every possible snippet across the time series, building up a collection of Distance Profiles. By taking the minimum value for each time step across all distance profiles, we can build the final Matrix Profile. Notice that both ends of the Matrix Profile value spectrum are useful. High values indicate uncommon patterns or anomalous events; in contrast, low values highlight repeatable motifs and provide valuable insight into your time series of interest.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="../../images/intro_img2.png" alt="Pic # 2"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>For those interested, this post by one of our co-founders provides a more in-depth discussion of the Matrix Profile.</p>
+<p>Although the Matrix Profile can be a game-changer for time series analysis, leveraging it to produce insights is a multi-step computational process, where each step requires some level of domain experience. However, we believe that the most powerful breakthroughs in data science occur when the complex is made accessible. When it comes to the Matrix Profile, there are three facets to accessibility: “out-of-the-box” working implementations, gentle introductions to core concepts that can naturally lead into deeper exploration, and multi-language accessibility.</p>
+<p>Today, we’re proud to unveil the Matrix Profile API (MPA), a common codebase written in R, Python and Golang that achieves all three of these goals.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="MPA:-how-it-works">MPA: how it works<a class="anchor-link" href="#MPA:-how-it-works">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Using the Matrix Profile consists of three steps.</p>
+<p>First, you Compute the Matrix Profile itself. However, this is not the end: you need to Discover something by leveraging the Matrix Profile that you’ve created. Do you want to find repeated patterns? Or perhaps uncover anomalous events? Finally, it’s critical that you Visualize your findings, as time series analysis greatly benefits from some level of visual inspection.</p>
+<p>Normally, you’d need to read through pages of documentation (both academic and technical) to figure out how to execute each of these three steps. This may not be a challenge if you’re an expert with prior knowledge of the Matrix Profile, but we’ve seen that many users simply want to Analyze their data by breaking through the methodology to get to a basic starting point. Can the code simply leverage some reasonable defaults to produce a reasonable output?</p>
+<p>To parallel this natural computational flow, MPA consists of three core components:</p>
+<ol>
+<li>
+<p>Compute (computing the Matrix Profile)</p>
+</li>
+<li>
+<p>Discover (evaluate the MP for motifs, discords, etc)</p>
+</li>
+<li>
+<p>Visualize (display results through basic plots)</p>
+</li>
+</ol>
+<p>These three capabilities are wrapped up into a high-level capability called Analyze. This is a user-friendly interface that enables people who know nothing about the inner workings of Matrix Profile to quickly leverage it for their own data. And as users gain more experience and intuition with MPA, they can easily dive deeper into any of the three core components to make further functional gains.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="MPA:-a-toy-example">MPA: a toy example<a class="anchor-link" href="#MPA:-a-toy-example">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As an example, we’ll use the Python flavor of MPA to analyze the synthetic time series shown below:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matrixprofile</span> <span class="k">as</span> <span class="nn">mp</span>
+
+<span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">'motifs-discords-small'</span><span class="p">)</span>
+<span class="n">vals</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">[</span><span class="s1">'data'</span><span class="p">]</span>
+
+<span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">vals</span><span class="p">)),</span><span class="n">vals</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">'Test Data'</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="../../images/intro_img3.png" alt="Pic # 3"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Visual inspection reveals that there are both patterns and discords present. However, one immediate problem is that your choice of subsequence length will change both the number and location of your motifs! Are there only two sinusoidal motifs present between indices 0–500, or is each cycle an instance of the pattern? Let’s see how MPA handles this challenge:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">profile</span><span class="p">,</span> <span class="n">figures</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">analyze</span><span class="p">(</span><span class="n">vals</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="../../images/intro_img4.png" alt="Pic # 4"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Because we haven’t specified any information regarding our subsequence length, <code>analyze</code> begins by leveraging a powerful calculation known as the pan-matrix profile (or PMP) to generate insights that will help us evaluate different subsequence lengths. We’ll discuss the details of PMP in a later post (or you can read the associated paper), but in a nutshell, it is a global calculation of all possible subsequence lengths condensed into a single visual summary. The X-axis is the index of the matrix profile, and the Y-axis is the corresponding subsequence length. The darker the shade, the lower the Euclidean distance at that point. We can use the “peaks” of the triangles to find the 6 “big” motifs visually present in the synthetic time series.</p>
+<p>The PMP is all well and good, but we promised a simple way of understanding your time series. To facilitate this, <code>analyze</code> will combine PMP with an under the hood algorithm to choose sensible motifs and discords from across all possible window sizes. The additional graphs created by <code>analyze</code> show the top three motifs and top three discords, along with the corresponding window size and position within the Matrix Profile (and, by extension, your time series).</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="../../images/intro_img6.png" alt="Pic # 6"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="../../images/intro_img7.png" alt="Pic # 7"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="../../images/intro_img8.png" alt="Pic # 8"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="../../images/intro_img9.png" alt="Pic # 9"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="../../images/intro_img10.png" alt="Pic # 10"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Not surprisingly, this is a lot of information coming out of the default setting. Our goal is that this core function call can serve as a jumping-off point for many of your future analyses. For example, the PMP indicates that there is a conserved motif of length ~175 within our time series. Try calling <code>analyze</code> on that subsequence length and see what happens!</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">profile</span><span class="p">,</span> <span class="n">figures</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">analyze</span><span class="p">(</span><span class="n">vals</span><span class="p">,</span><span class="n">windows</span><span class="o">=</span><span class="mi">175</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Wrapping-Up">Wrapping Up<a class="anchor-link" href="#Wrapping-Up">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We hope that MPA enables you to more painlessly analyze your time series, and please star our GitHub repos if you find the code useful! MPF also operates a Discord channel where you can engage with fellow users of the Matrix Profile and ask questions. Happy time series hunting!</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Acknowledgements">Acknowledgements<a class="anchor-link" href="#Acknowledgements">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Thank you to Tyler Marrs, Frankie Cancino, Francisco Bischoff, Austin Ouyang and Jack Green for reviewing this article and assisting in its creation. And above all, thank you to Eamonn Keogh, Abdullah Mueen and their numerous graduate students for creating the Matrix Profile and continuing to drive its development.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Supplemental">Supplemental<a class="anchor-link" href="#Supplemental">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ol>
+<li>Matrix Profile research papers can be found on Eamonn Keogh’s UCR web page:</li>
+</ol>
+<p><a href="https://www.cs.ucr.edu/~eamonn/MatrixProfile.html">https://www.cs.ucr.edu/~eamonn/MatrixProfile.html</a></p>
+<ol>
+<li>The Python implementation of Matrix Profile algorithms can be found here:</li>
+</ol>
+<p><a href="https://github.com/matrix-profile-foundation/matrixprofile">https://github.com/matrix-profile-foundation/matrixprofile</a></p>
+<ol>
+<li>The R implementation of Matrix Profile algorithms can be found here:</li>
+</ol>
+<p><a href="https://github.com/matrix-profile-foundation/tsmp">https://github.com/matrix-profile-foundation/tsmp</a></p>
+<ol>
+<li>The Golang implementation of Matrix Profile algorithms can be found here:</li>
+</ol>
+<p><a href="https://github.com/matrix-profile-foundation/go-matrixprofile">https://github.com/matrix-profile-foundation/go-matrixprofile</a></p>
+
+</div>
+</div>
+</div>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul class="pager hidden-print">
+<li class="previous">
+                <a href="../meet-andrew-van-benschoten/" rel="prev" title="Meet Andrew Van Benschoten">Previous post</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="matrix-profile-foundation",
+            disqus_url="https://matrixprofile.org/posts/how-to-painlessly-analyze-your-time-series/",
+        disqus_title="How To Painlessly Analyze Your Time Series",
+        disqus_identifier="cache/posts/how-to-painlessly-analyze-your-time-series.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$latex ','$'], ['\\(','\\)']]}});
+        </script></article><script>var disqus_shortname="matrix-profile-foundation";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content-->
+</div>
+    <footer id="footer"><!-- Footer Links --><div class="container-fluid text-center text-md-left">
+
+<!-- Grid row -->
+<div class="row">
+
+  <!-- Grid column -->
+  <div class="col-md-6 mt-md-0 mt-3">
+    <!-- Content -->
+    <h5 class="text-uppercase">Matrix Profile Foundation</h5>
+    <p>Enabling community members to easily interact with the Matrix Profile algorithms through education, support and software.</p>
+  </div>
+  <!-- Grid column -->
+
+  <hr class="clearfix w-100 d-md-none pb-3">
+<!-- Grid column --><div class="col-md-3 mb-md-0 mb-3">
+
+    <!-- Links -->
+    <h5 class="text-uppercase">Connect</h5>
+    <ul class="list-unstyled">
+<li>
+        <a href="https://twitter.com/matrixprofile">
+          <i class="fab fa-twitter"></i> Twitter
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/matrix-profile-foundation">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/company/matrix-profile-foundation">
+          <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+      </li>
+      <li>
+        <a href="https://discord.gg/sBhDNXT">
+          <i class="fab fa-discord"></i> Discord
+        </a>
+      </li>
+    </ul>
+</div>
+  <!-- Grid column -->
+
+  <!-- Grid column -->
+  <div class="col-md-3 mb-md-0 mb-3">
+
+    <!-- Links -->
+    <h5 class="text-uppercase">Quick Links</h5>
+
+    <ul class="list-unstyled">
+<li>
+        <a href="../../">About</a>
+      </li>
+      <li>
+        <a href="../../libraries/">Libraries</a>
+      </li>
+      <li>
+        <a href="../../apps/">Apps</a>
+      </li>
+      <li>
+        <a href="../../faqs/">FAQs</a>
+      </li>
+      <li>
+        <a href="../">Blog</a>
+      </li>
+    </ul>
+</div>
+  <!-- Grid column -->
+
+</div>
+<!-- Grid row -->
+
+</div>
+<!-- Footer Links -->
+
+<!-- Copyright -->
+<div class="footer-copyright text-center py-3">
+    © 2020 Matrix Profile Foundation
+</div>
+<!-- Copyright -->
+
+        
+    </footer>
+</div>
+
+        <script src="../../assets/js/all-nocdn.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-143395881-1"></script><script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-143395881-1');
+</script>
+</body>
+</html>

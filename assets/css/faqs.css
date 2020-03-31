@@ -1,0 +1,27 @@
+div.list-toggle ul {
+	list-style-type: none;
+	margin: 0px;
+	padding-inline-start: 0px;
+}
+
+div.list-toggle ul li p {
+	margin: 5px;
+	padding: 5px;
+	display: block;
+	border: 1px solid #e5e5e5;
+	border-radius: 5px;
+	background-color: #eee;
+	font-weight: bold;
+}
+
+div.list-toggle ul li p:hover {
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+div.list-toggle ul li ul {
+	display: none;
+	margin-left: 2rem;
+	margin-bottom: 0.75rem;
+	font-style: italic;
+}
