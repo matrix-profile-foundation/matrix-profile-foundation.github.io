@@ -84,7 +84,12 @@ You should be able to view the site on [http://localhost:8000](http://localhost:
 When you are happy with your post, you may deploy the website using the command:
 
 ```
+nikola build
 nikola github_deploy
 ```
 
-At the time of this writing, github_deploy is not fully set up. However, it will be used in the future.
+This command should be ran on the src branch within the website directory. Nikola automatically commits the built website to the master branch. You may provide a custom commit message:
+
+```
+nikola github_deploy -m "my commit message"
+```
