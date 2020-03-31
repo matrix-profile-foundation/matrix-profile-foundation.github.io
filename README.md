@@ -1,6 +1,6 @@
 # mpf-org
 
-The src branch contains all of the source code to generate the website while the gh-pages branch contains the live website. This website uses nikola. Review their [documentation](https://getnikola.com/handbook.html) to get started.
+The src branch contains all of the source code to generate the website while the master branch contains the live website. This website uses Nikola, a static site generator written in Python. Review their [documentation](https://getnikola.com/handbook.html) to get started.
 
 ## Setup
 Conda is used to manage the environment and pip is used for extra dependencies:
