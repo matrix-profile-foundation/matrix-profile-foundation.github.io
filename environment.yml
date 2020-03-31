@@ -7,3 +7,4 @@ dependencies:
   - pip:
     - jupyter==1.0.0
     - nikola==8.0.4
+    - ghp-import2
