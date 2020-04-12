@@ -6,12 +6,18 @@
 {% macro html_title() %}
 {% if title and not post.meta('hidetitle') %}
     <h1 class="p-name entry-title" itemprop="headline name"><a href="{{ post.permalink() }}" class="u-url">{{ post.title()|e }}</a></h1>
+    {% if post.meta('subtitle') %}
+        <h2 class="p-name entry-subtitle"> {{ post.meta('subtitle') }}</h2>
+    {% endif %}
 {% endif %}
 {% endmacro %}
 
 {% macro html_title_no_link() %}
 {% if title and not post.meta('hidetitle') %}
     <h1 class="p-name entry-title" itemprop="headline name">{{ post.title()|e }}</h1>
+    {% if post.meta('subtitle') %}
+        <h2 class="p-name entry-subtitle"> {{ post.meta('subtitle') }}</h2>
+    {% endif %}
 {% endif %}
 {% endmacro %}
 
@@ -37,6 +43,9 @@
 {% macro html_post_header(post) %}
     <header>
         <h1 class="p-name entry-title"><a href="{{ post.permalink() }}" class="u-url">{{ post.title()|e }}</a></h1>
+        {% if post.meta('subtitle') %}
+            <h2 class="p-name entry-subtitle"> {{ post.meta('subtitle') }}</h2>
+        {% endif %}
         <div class="metadata">            
             <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
                 {{ author_helper.author_post_image(post) }}
@@ -71,6 +80,9 @@
 {% macro html_post_header_no_link(post) %}
     <header>
         <h1 class="p-name entry-title">{{ post.title()|e }}</h1>
+        {% if post.meta('subtitle') %}
+            <h2 class="p-name entry-subtitle"> {{ post.meta('subtitle') }}</h2>
+        {% endif %}
         <div class="metadata">            
             <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
                 {{ author_helper.author_post_image(post) }}
