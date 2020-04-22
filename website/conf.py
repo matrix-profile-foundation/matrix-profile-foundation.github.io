@@ -26,7 +26,7 @@ SITE_URL = "https://matrixprofile.org/"
 # BASE_URL = "https://matrixprofile.org/"
 BLOG_EMAIL = "nowhere@mail.com"
 BLOG_DESCRIPTION = '''
-Matrix Profile Foundation website for tutorials, news, and applications based 
+Matrix Profile Foundation website for tutorials, news, and applications based
 on the matrix profile research from UCR research group Eamonn Keogh.
 '''
 
@@ -1486,6 +1486,7 @@ GLOBAL_CONTEXT = {
         'Jack Green': '/images/jack.jpg',
         'Austin Ouyang': '/images/austin.png',
         'Andrew Van Benschoten': '/images/andrew.jpg',
+        'Nikita Smyrnov': '/images/nikita.jpg',
     }
 }
 
