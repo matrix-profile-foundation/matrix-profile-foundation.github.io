@@ -15,11 +15,11 @@
  </url>
  <url>
   <loc>https://matrixprofile.org/archive.html</loc>
-  <lastmod>2020-04-15T20:31:00Z</lastmod>
+  <lastmod>2020-04-23T15:09:00Z</lastmod>
  </url>
  <url>
   <loc>https://matrixprofile.org/authors/</loc>
-  <lastmod>2020-04-15T20:31:00Z</lastmod>
+  <lastmod>2020-04-23T15:09:00Z</lastmod>
  </url>
  <url>
   <loc>https://matrixprofile.org/authors/andrew-van-benschoten/</loc>
@@ -30,12 +30,20 @@
   <lastmod>2020-04-15T20:31:00Z</lastmod>
  </url>
  <url>
+  <loc>https://matrixprofile.org/authors/nikita-smyrnov/</loc>
+  <lastmod>2020-04-23T15:09:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://matrixprofile.org/authors/tyler-marrs/</loc>
   <lastmod>2020-04-15T20:31:00Z</lastmod>
  </url>
  <url>
   <loc>https://matrixprofile.org/categories/</loc>
-  <lastmod>2020-04-15T20:31:00Z</lastmod>
+  <lastmod>2020-04-23T15:09:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://matrixprofile.org/categories/annotation-vectors/</loc>
+  <lastmod>2020-04-23T15:09:00Z</lastmod>
  </url>
  <url>
   <loc>https://matrixprofile.org/categories/anomalies/</loc>
@@ -52,6 +60,10 @@
  <url>
   <loc>https://matrixprofile.org/categories/meet-the-team/</loc>
   <lastmod>2020-04-15T20:31:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://matrixprofile.org/categories/motifs/</loc>
+  <lastmod>2020-04-23T15:09:00Z</lastmod>
  </url>
  <url>
   <loc>https://matrixprofile.org/categories/python/</loc>
@@ -87,11 +99,15 @@
  </url>
  <url>
   <loc>https://matrixprofile.org/listings/hello.py.html</loc>
-  <lastmod>2020-04-15T20:31:00Z</lastmod>
+  <lastmod>2020-04-23T15:09:00Z</lastmod>
  </url>
  <url>
   <loc>https://matrixprofile.org/posts/</loc>
-  <lastmod>2020-04-15T20:31:00Z</lastmod>
+  <lastmod>2020-04-23T15:09:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://matrixprofile.org/posts/ECG-heartbeat-av/</loc>
+  <lastmod>2020-04-23T15:09:00Z</lastmod>
  </url>
  <url>
   <loc>https://matrixprofile.org/posts/how-to-painlessly-analyze-your-time-series/</loc>
