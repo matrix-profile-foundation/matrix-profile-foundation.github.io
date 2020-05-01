@@ -7,134 +7,138 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://matrixprofile.org/</loc>
-  <lastmod>2020-04-15T20:31:00Z</lastmod>
+  <lastmod>2020-04-30T22:15:00Z</lastmod>
  </url>
  <url>
   <loc>https://matrixprofile.org/apps/</loc>
-  <lastmod>2020-04-15T20:31:00Z</lastmod>
+  <lastmod>2020-04-30T22:15:00Z</lastmod>
  </url>
  <url>
   <loc>https://matrixprofile.org/archive.html</loc>
-  <lastmod>2020-04-23T15:09:00Z</lastmod>
+  <lastmod>2020-05-01T13:36:00Z</lastmod>
  </url>
  <url>
   <loc>https://matrixprofile.org/authors/</loc>
-  <lastmod>2020-04-23T15:09:00Z</lastmod>
+  <lastmod>2020-04-30T22:15:00Z</lastmod>
  </url>
  <url>
   <loc>https://matrixprofile.org/authors/andrew-van-benschoten/</loc>
-  <lastmod>2020-04-15T20:31:00Z</lastmod>
+  <lastmod>2020-04-30T22:15:00Z</lastmod>
  </url>
  <url>
   <loc>https://matrixprofile.org/authors/matrix-profile-foundation/</loc>
-  <lastmod>2020-04-15T20:31:00Z</lastmod>
+  <lastmod>2020-04-30T22:15:00Z</lastmod>
  </url>
  <url>
   <loc>https://matrixprofile.org/authors/nikita-smyrnov/</loc>
-  <lastmod>2020-04-23T15:09:00Z</lastmod>
+  <lastmod>2020-04-30T22:15:00Z</lastmod>
  </url>
  <url>
   <loc>https://matrixprofile.org/authors/tyler-marrs/</loc>
-  <lastmod>2020-04-15T20:31:00Z</lastmod>
+  <lastmod>2020-04-30T22:15:00Z</lastmod>
  </url>
  <url>
   <loc>https://matrixprofile.org/categories/</loc>
-  <lastmod>2020-04-23T15:09:00Z</lastmod>
+  <lastmod>2020-04-30T22:15:00Z</lastmod>
  </url>
  <url>
   <loc>https://matrixprofile.org/categories/annotation-vectors/</loc>
-  <lastmod>2020-04-23T15:09:00Z</lastmod>
+  <lastmod>2020-04-30T22:15:00Z</lastmod>
  </url>
  <url>
   <loc>https://matrixprofile.org/categories/anomalies/</loc>
-  <lastmod>2020-04-15T20:31:00Z</lastmod>
+  <lastmod>2020-04-30T22:15:00Z</lastmod>
  </url>
  <url>
   <loc>https://matrixprofile.org/categories/discords/</loc>
-  <lastmod>2020-04-15T20:31:00Z</lastmod>
+  <lastmod>2020-04-30T22:15:00Z</lastmod>
  </url>
  <url>
   <loc>https://matrixprofile.org/categories/matrixprofile/</loc>
-  <lastmod>2020-04-15T20:31:00Z</lastmod>
+  <lastmod>2020-04-30T22:15:00Z</lastmod>
  </url>
  <url>
   <loc>https://matrixprofile.org/categories/meet-the-team/</loc>
-  <lastmod>2020-04-15T20:31:00Z</lastmod>
+  <lastmod>2020-04-30T22:15:00Z</lastmod>
  </url>
  <url>
   <loc>https://matrixprofile.org/categories/motifs/</loc>
-  <lastmod>2020-04-23T15:09:00Z</lastmod>
+  <lastmod>2020-04-30T22:15:00Z</lastmod>
  </url>
  <url>
   <loc>https://matrixprofile.org/categories/python/</loc>
-  <lastmod>2020-04-15T20:31:00Z</lastmod>
+  <lastmod>2020-04-30T22:15:00Z</lastmod>
  </url>
  <url>
   <loc>https://matrixprofile.org/categories/tutorial/</loc>
-  <lastmod>2020-04-15T20:31:00Z</lastmod>
+  <lastmod>2020-04-30T22:15:00Z</lastmod>
  </url>
  <url>
   <loc>https://matrixprofile.org/contact-us/</loc>
-  <lastmod>2020-04-15T20:31:00Z</lastmod>
+  <lastmod>2020-04-30T22:15:00Z</lastmod>
  </url>
  <url>
   <loc>https://matrixprofile.org/faqs/</loc>
-  <lastmod>2020-04-15T20:31:00Z</lastmod>
+  <lastmod>2020-04-30T22:15:00Z</lastmod>
  </url>
  <url>
   <loc>https://matrixprofile.org/galleries/</loc>
-  <lastmod>2020-04-15T20:31:00Z</lastmod>
+  <lastmod>2020-04-30T22:15:00Z</lastmod>
  </url>
  <url>
   <loc>https://matrixprofile.org/galleries/demo/</loc>
-  <lastmod>2020-04-15T20:31:00Z</lastmod>
+  <lastmod>2020-04-30T22:15:00Z</lastmod>
  </url>
  <url>
   <loc>https://matrixprofile.org/libraries/</loc>
-  <lastmod>2020-04-15T20:31:00Z</lastmod>
+  <lastmod>2020-04-30T22:15:00Z</lastmod>
  </url>
  <url>
   <loc>https://matrixprofile.org/listings/</loc>
-  <lastmod>2020-04-15T20:31:00Z</lastmod>
+  <lastmod>2020-04-30T22:15:00Z</lastmod>
  </url>
  <url>
   <loc>https://matrixprofile.org/listings/hello.py.html</loc>
-  <lastmod>2020-04-23T15:09:00Z</lastmod>
+  <lastmod>2020-04-30T22:15:00Z</lastmod>
  </url>
  <url>
   <loc>https://matrixprofile.org/posts/</loc>
-  <lastmod>2020-04-23T15:09:00Z</lastmod>
+  <lastmod>2020-04-30T22:15:00Z</lastmod>
  </url>
  <url>
   <loc>https://matrixprofile.org/posts/ECG-heartbeat-av/</loc>
-  <lastmod>2020-04-23T15:09:00Z</lastmod>
+  <lastmod>2020-04-30T22:15:00Z</lastmod>
  </url>
  <url>
   <loc>https://matrixprofile.org/posts/how-to-painlessly-analyze-your-time-series/</loc>
-  <lastmod>2020-04-15T20:31:00Z</lastmod>
+  <lastmod>2020-04-30T22:15:00Z</lastmod>
  </url>
  <url>
   <loc>https://matrixprofile.org/posts/meet-andrew-van-benschoten/</loc>
-  <lastmod>2020-04-15T20:31:00Z</lastmod>
+  <lastmod>2020-04-30T22:15:00Z</lastmod>
  </url>
  <url>
   <loc>https://matrixprofile.org/posts/meet-francisco-bischoff/</loc>
-  <lastmod>2020-04-15T20:31:00Z</lastmod>
+  <lastmod>2020-04-30T22:15:00Z</lastmod>
  </url>
  <url>
   <loc>https://matrixprofile.org/posts/meet-frankie-cancino/</loc>
-  <lastmod>2020-04-15T20:31:00Z</lastmod>
+  <lastmod>2020-04-30T22:15:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://matrixprofile.org/posts/meet-jackson-green/</loc>
+  <lastmod>2020-04-30T22:15:00Z</lastmod>
  </url>
  <url>
   <loc>https://matrixprofile.org/posts/meet-tyler-marrs/</loc>
-  <lastmod>2020-04-15T20:31:00Z</lastmod>
+  <lastmod>2020-04-30T22:15:00Z</lastmod>
  </url>
  <url>
   <loc>https://matrixprofile.org/posts/nyc-taxi-analysis-anomalies-python/</loc>
-  <lastmod>2020-04-15T20:31:00Z</lastmod>
+  <lastmod>2020-04-30T22:15:00Z</lastmod>
  </url>
  <url>
   <loc>https://matrixprofile.org/reach-out/</loc>
-  <lastmod>2020-04-15T20:31:00Z</lastmod>
+  <lastmod>2020-04-30T22:15:00Z</lastmod>
  </url>
 </urlset>
