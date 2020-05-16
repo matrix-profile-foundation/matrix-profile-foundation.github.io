@@ -1,0 +1,21 @@
+.navbar-brand {
+    font-family: 'Roboto Mono', monospace;
+}
+
+h1.display,
+h2.display,
+h3.display,
+h4.display,
+h5.display,
+h6.display {
+    font-family: 'Roboto Mono', monospace;
+}
+
+.short-post-list > a.title {
+    font-size: 1.25rem;
+    margin-bottom: .5rem;
+}
+
+footer {
+    padding: 2rem 0;
+}

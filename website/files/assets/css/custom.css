@@ -1,7 +1,52 @@
 /* Various Styles */
-body {
+/* body {
 	color: #333333;
 	font-family: 'Montserrat', sans-serif;
+} */
+
+.hero {
+    background-color: #fff;
+    border-bottom: 1px solid rgba(0, 0, 0, .12);
+}
+
+.hero p.lead {
+    font-size: 1.5rem;
+}
+
+.hero .btn-lg {
+    min-width: 150px;
+    font-weight: 700;
+}
+
+.feature-list {
+    padding-top: 2rem;
+}
+
+.feature-list .row {
+    margin: 0 0 4rem 0;
+}
+
+.feature-list p.feature {
+    font-size: 1.25rem;
+    margin-bottom: .25rem;
+}
+
+.recent-blogs {
+    border-left: 1px solid rgba(0, 0, 0, .12);
+    padding-top: 2rem;
+}
+
+.libraries p.card-text,
+.libraries a.card-link {
+    font-size: .875rem;
+}
+
+.card-link+.card-link {
+    margin-left: 1rem;
+}
+
+.entry-content {
+    margin-top: 0;
 }
 
 #logo {
@@ -15,14 +60,6 @@ nav.navbar.bg-light {
 	border-top: 0px;
 	border-left: 0px;
 	border-right: 0px;
-}
-
-/* FOOTER */
-footer#footer {
-	padding-top: 25px;
-	margin-top: 25px;
-	color: #777;
-	border-top: 1px solid #e5e5e5;
 }
 
 /* Override nikola_ipython.css */
@@ -108,29 +145,29 @@ div.text_cell_render.rendered_html h6 {
 }
 
 /* Post Styles */
-span.author-post-image img{
-	margin-top: 5px;
+img.author-image {
     height: 75px;
     width: auto;
     border-radius: 50%;
 }
 
-span.author-post-image.default-author-image img {
-	margin-top: 5px;
-    height: 75px;
-    width: auto;
+img.author-image.default {
     border-radius: 0;
 }
 
-.metadata p.dateline::before {
+.card img.author-image {
+    height: 50px;
+}
+
+span.date-line::before {
     content: " on ";
 }
 
-.metadata span.author-post-image:after {
+span.by-line::before {
     content: " by ";
 }
 
-.metadata p.commentline::before {
+span.comment-line::before {
     content: " with ";
 }
 

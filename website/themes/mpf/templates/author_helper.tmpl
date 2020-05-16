@@ -1,0 +1,7 @@
+{% macro author_post_image(post) %}
+	{% if author_images[post.author()] and not post.author() == 'Matrix Profile Foundation' %}
+        <img src="{{ author_images[post.author()] }}" class="author-image"/>
+	{% else %}
+        <img src="{{ author_images[post.author()] }}" class="author-image default"/>
+	{% endif %}
+{% endmacro %}

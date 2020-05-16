@@ -1,0 +1,19 @@
+{% block content %}
+{% if posts %}
+<div id="{{ post_list_id }}" class="d-flex flex-column short-post-list">
+    {% for post in posts %}
+    {% if post.meta('description') %}
+    <a href="{{ post.permalink(lang) }}" class="title">{{ post.title(lang)|e }}</a>
+    <p class="text-muted mb-3">{{ post.meta('description') }}</p>
+    {% else %}
+    <a href="{{ post.permalink(lang) }}" class="title mb-3">{{ post.title(lang)|e }}</a>
+    {% endif %}
+    {% endfor %}
+</div>
+{% else %}
+<p>
+    No post have been made in the blog.
+</p>
+{% endif %}
+<!-- End post-list {{ post_list_id }} -->
+{% endblock %}
