@@ -1,0 +1,18 @@
+{#  -*- coding: utf-8 -*- #}
+{% import 'post_helper.tmpl' as helper with context %}
+{% import 'post_header.tmpl' as pheader with context %}
+{% extends 'base.tmpl' %}
+
+{% block content %}
+<header class="container">
+    <div class="row">
+        <div class="col">
+            {{ pheader.html_title_no_link() }}
+            {{ pheader.html_translations(post) }}
+        </div>
+    </div>
+</header>
+<div class="e-content entry-content" itemprop="articleBody text">
+{{ post.text() }}
+</div>
+{% endblock %}
