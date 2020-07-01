@@ -7,7 +7,55 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://matrixprofile.org/</loc>
-  <lastmod>2020-04-30T22:15:00Z</lastmod>
+  <lastmod>2020-06-27T20:59:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://matrixprofile.org/2020/</loc>
+  <lastmod>2020-06-27T20:59:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://matrixprofile.org/2020/03/</loc>
+  <lastmod>2020-06-27T21:08:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://matrixprofile.org/2020/03/01/</loc>
+  <lastmod>2020-06-27T21:08:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://matrixprofile.org/2020/03/07/</loc>
+  <lastmod>2020-06-27T21:08:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://matrixprofile.org/2020/03/10/</loc>
+  <lastmod>2020-06-27T21:08:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://matrixprofile.org/2020/03/28/</loc>
+  <lastmod>2020-06-27T21:08:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://matrixprofile.org/2020/04/</loc>
+  <lastmod>2020-06-27T21:08:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://matrixprofile.org/2020/04/15/</loc>
+  <lastmod>2020-06-27T21:08:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://matrixprofile.org/2020/04/22/</loc>
+  <lastmod>2020-06-27T21:08:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://matrixprofile.org/2020/05/</loc>
+  <lastmod>2020-06-27T21:08:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://matrixprofile.org/2020/05/01/</loc>
+  <lastmod>2020-06-27T21:08:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://matrixprofile.org/about/</loc>
+  <lastmod>2020-05-13T22:50:00Z</lastmod>
  </url>
  <url>
   <loc>https://matrixprofile.org/apps/</loc>
@@ -15,7 +63,7 @@
  </url>
  <url>
   <loc>https://matrixprofile.org/archive.html</loc>
-  <lastmod>2020-05-01T13:36:00Z</lastmod>
+  <lastmod>2020-07-01T00:55:00Z</lastmod>
  </url>
  <url>
   <loc>https://matrixprofile.org/authors/</loc>
@@ -99,7 +147,7 @@
  </url>
  <url>
   <loc>https://matrixprofile.org/listings/hello.py.html</loc>
-  <lastmod>2020-04-30T22:15:00Z</lastmod>
+  <lastmod>2020-07-01T00:55:00Z</lastmod>
  </url>
  <url>
   <loc>https://matrixprofile.org/posts/</loc>

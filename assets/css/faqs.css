@@ -5,13 +5,11 @@ div.list-toggle ul {
 }
 
 div.list-toggle ul li p {
-	margin: 5px;
-	padding: 5px;
+	padding: .875rem;
 	display: block;
-	border: 1px solid #e5e5e5;
+	border: 1px solid #0000001e;
 	border-radius: 5px;
-	background-color: #eee;
-	font-weight: bold;
+	background-color: #fff;
 }
 
 div.list-toggle ul li p:hover {
@@ -21,7 +19,6 @@ div.list-toggle ul li p:hover {
 
 div.list-toggle ul li ul {
 	display: none;
-	margin-left: 2rem;
-	margin-bottom: 0.75rem;
+	margin: 0 2rem .75rem 2rem;
 	font-style: italic;
 }
