@@ -19,7 +19,7 @@
  </url>
  <url>
   <loc>https://matrixprofile.org/archive.html</loc>
-  <lastmod>2020-07-03T17:11:00Z</lastmod>
+  <lastmod>2020-07-17T15:59:00Z</lastmod>
  </url>
  <url>
   <loc>https://matrixprofile.org/authors/</loc>
@@ -43,7 +43,7 @@
  </url>
  <url>
   <loc>https://matrixprofile.org/categories/</loc>
-  <lastmod>2020-04-23T15:09:00Z</lastmod>
+  <lastmod>2020-07-17T15:57:00Z</lastmod>
  </url>
  <url>
   <loc>https://matrixprofile.org/categories/annotation-vectors/</loc>
@@ -54,8 +54,16 @@
   <lastmod>2020-04-15T20:31:00Z</lastmod>
  </url>
  <url>
+  <loc>https://matrixprofile.org/categories/clustering/</loc>
+  <lastmod>2020-07-17T15:57:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://matrixprofile.org/categories/discords/</loc>
   <lastmod>2020-04-15T20:31:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://matrixprofile.org/categories/hdbscan/</loc>
+  <lastmod>2020-07-17T15:57:00Z</lastmod>
  </url>
  <url>
   <loc>https://matrixprofile.org/categories/matrixprofile/</loc>
@@ -107,11 +115,19 @@
  </url>
  <url>
   <loc>https://matrixprofile.org/posts/</loc>
-  <lastmod>2020-07-03T17:11:00Z</lastmod>
+  <lastmod>2020-07-17T15:57:00Z</lastmod>
  </url>
  <url>
   <loc>https://matrixprofile.org/posts/ECG-heartbeat-av/</loc>
   <lastmod>2020-04-23T15:09:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://matrixprofile.org/posts/clustering-computing-the-pairwise-distance-matrix/</loc>
+  <lastmod>2020-07-17T15:57:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://matrixprofile.org/posts/hdbscan-clustering-with-mpdist/</loc>
+  <lastmod>2020-07-17T15:57:00Z</lastmod>
  </url>
  <url>
   <loc>https://matrixprofile.org/posts/how-to-painlessly-analyze-your-time-series/</loc>
