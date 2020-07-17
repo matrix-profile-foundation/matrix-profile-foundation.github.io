@@ -1,0 +1,9 @@
+.. title: HDBScan Clustering with MPDist
+.. subtitle: Learn how to use MPDist metric with the HDBScan clustering algorithm.
+.. slug: hdbscan-clustering-with-mpdist
+.. date: 2020-07-17
+.. tags: tutorial,python,clustering,matrixprofile,hdbscan
+.. link:
+.. description: A short tutorial demonstrating how to use MPDist with HDBScan for clustering.
+.. type: text
+.. author: Tyler Marrs
