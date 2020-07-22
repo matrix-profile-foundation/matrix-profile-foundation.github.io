@@ -146,6 +146,8 @@ NAVIGATION_LINKS = {
         ("/about/", "About Us"),
         ("/libraries/", "Libraries"),
         # ("/apps/", "Apps"),
+        ("/contribute/", "Contribute"),
+        ("/conduct/", "Conduct"),
         ("/faqs/", "FAQs"),
         (
             (
