@@ -19,3 +19,9 @@ h6.display {
 footer {
     padding: 2rem 0;
 }
+
+p > a,
+ul:not(.list-unstyled) > li:not(.nav-item) > a,
+ol:not(.list-unstyled) > li:not(.nav-item) > a {
+    text-decoration: underline;
+}
