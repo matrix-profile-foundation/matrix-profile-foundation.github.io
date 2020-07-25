@@ -1,5 +1,7 @@
 <img alt="Yue Lu" src="/images/yue.jpg" style="max-width: 300px;">
 
+*The Matrix Profile Foundation is excited to partner, this summer, with two UCR researchers who will help expand the quality and functionality of our codebases! Yue Lue and Kaveh Kamgar bring a wealth of valuable experience that will serve the Matrix Profile community well. In this post, learn a little bit more about Yue and her time with MPF!*
+
 ## Introduce who you are/your current role at UCR
 My name is Yue Lu. I am a first-year Ph.D. student in the Department of Computer Science and Engineering at the University of California, Riverside. Before joining UCR, I received my B.S. degree in Software Technology and Application (with First Class Honors) from Macau University of Science and Technology in 2018. I am now working with Dr. Eamonn Keogh on time-series mining. My research interests include data mining, time-series analysis and deep learning.
 
