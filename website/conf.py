@@ -1496,6 +1496,7 @@ GLOBAL_CONTEXT = {
         'Austin Ouyang': '/images/austin.png',
         'Andrew Van Benschoten': '/images/andrew.jpg',
         'Nikita Smyrnov': '/images/nikita.jpg',
+	'Kevin Kent': /images/Kevin.jpg'
     }
 }
 
