@@ -19,7 +19,7 @@
  </url>
  <url>
   <loc>https://matrixprofile.org/archive.html</loc>
-  <lastmod>2020-08-28T03:13:00Z</lastmod>
+  <lastmod>2020-09-09T02:13:00Z</lastmod>
  </url>
  <url>
   <loc>https://matrixprofile.org/authors/</loc>
@@ -47,7 +47,7 @@
  </url>
  <url>
   <loc>https://matrixprofile.org/categories/</loc>
-  <lastmod>2020-08-28T02:49:00Z</lastmod>
+  <lastmod>2020-09-09T00:18:00Z</lastmod>
  </url>
  <url>
   <loc>https://matrixprofile.org/categories/annotation-vectors/</loc>
@@ -84,6 +84,10 @@
  <url>
   <loc>https://matrixprofile.org/categories/python/</loc>
   <lastmod>2020-08-27T19:40:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://matrixprofile.org/categories/snippets/</loc>
+  <lastmod>2020-09-09T00:18:00Z</lastmod>
  </url>
  <url>
   <loc>https://matrixprofile.org/categories/tutorial/</loc>
@@ -127,7 +131,7 @@
  </url>
  <url>
   <loc>https://matrixprofile.org/posts/</loc>
-  <lastmod>2020-08-27T19:56:00Z</lastmod>
+  <lastmod>2020-09-09T00:18:00Z</lastmod>
  </url>
  <url>
   <loc>https://matrixprofile.org/posts/ECG-heartbeat-av/</loc>
@@ -147,7 +151,7 @@
  </url>
  <url>
   <loc>https://matrixprofile.org/posts/index-1.html</loc>
-  <lastmod>2020-08-28T03:13:00Z</lastmod>
+  <lastmod>2020-09-09T00:18:00Z</lastmod>
  </url>
  <url>
   <loc>https://matrixprofile.org/posts/meet-andrew-van-benschoten/</loc>
@@ -180,6 +184,10 @@
  <url>
   <loc>https://matrixprofile.org/posts/what-are-time-series-discords/</loc>
   <lastmod>2020-08-27T19:56:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://matrixprofile.org/posts/what-are-time-series-snippets/</loc>
+  <lastmod>2020-09-09T00:18:00Z</lastmod>
  </url>
  <url>
   <loc>https://matrixprofile.org/reach-out/</loc>
