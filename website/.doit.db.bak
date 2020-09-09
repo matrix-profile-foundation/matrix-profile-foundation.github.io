@@ -539,3 +539,7 @@
 'render_taxonomies:output/authors/yue-lu.xml', (2525696, 752)
 'render_pages:output/posts/what-are-time-series-discords/index.html', (2526720, 3712)
 'render_posts:cache/posts/what-are-time-series-discords.html', (2546176, 577)
+'render_taxonomies:output/categories/snippets.xml', (2598400, 752)
+'render_pages:output/posts/what-are-time-series-snippets/index.html', (2599424, 3712)
+'render_taxonomies:output/categories/snippets/index.html', (2620928, 1899)
+'render_posts:cache/posts/what-are-time-series-snippets.html', (2627584, 577)
