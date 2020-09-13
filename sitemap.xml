@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://matrixprofile.org/</loc>
-  <lastmod>2020-08-27T19:40:00Z</lastmod>
+  <lastmod>2020-09-13T22:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://matrixprofile.org/about/</loc>
@@ -19,7 +19,7 @@
  </url>
  <url>
   <loc>https://matrixprofile.org/archive.html</loc>
-  <lastmod>2020-09-09T02:13:00Z</lastmod>
+  <lastmod>2020-09-13T22:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://matrixprofile.org/authors/</loc>
@@ -118,6 +118,10 @@
   <lastmod>2020-08-27T19:40:00Z</lastmod>
  </url>
  <url>
+  <loc>https://matrixprofile.org/governance/</loc>
+  <lastmod>2020-09-13T22:04:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://matrixprofile.org/libraries/</loc>
   <lastmod>2020-08-27T19:40:00Z</lastmod>
  </url>
@@ -127,7 +131,7 @@
  </url>
  <url>
   <loc>https://matrixprofile.org/listings/hello.py.html</loc>
-  <lastmod>2020-08-28T03:13:00Z</lastmod>
+  <lastmod>2020-09-13T22:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://matrixprofile.org/posts/</loc>
@@ -151,7 +155,7 @@
  </url>
  <url>
   <loc>https://matrixprofile.org/posts/index-1.html</loc>
-  <lastmod>2020-09-09T00:18:00Z</lastmod>
+  <lastmod>2020-09-13T22:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://matrixprofile.org/posts/meet-andrew-van-benschoten/</loc>
