@@ -7,82 +7,82 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>https://matrixprofile.org/authors/andrew-van-benschoten.xml</loc>
-  <lastmod>2020-08-27T19:40:00Z</lastmod>
+  <lastmod>2020-07-03T17:11:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://matrixprofile.org/authors/matrix-profile-foundation.xml</loc>
-  <lastmod>2020-08-27T19:40:00Z</lastmod>
+  <lastmod>2020-07-03T17:11:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://matrixprofile.org/authors/nikita-smyrnov.xml</loc>
-  <lastmod>2020-08-27T19:40:00Z</lastmod>
+  <lastmod>2020-07-03T17:11:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://matrixprofile.org/authors/tyler-marrs.xml</loc>
-  <lastmod>2020-08-27T19:40:00Z</lastmod>
+  <lastmod>2020-07-17T15:59:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://matrixprofile.org/authors/yue-lu.xml</loc>
-  <lastmod>2020-09-09T02:13:00Z</lastmod>
+  <lastmod>2020-09-14T00:50:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://matrixprofile.org/categories/annotation-vectors.xml</loc>
-  <lastmod>2020-08-27T19:40:00Z</lastmod>
+  <lastmod>2020-07-03T17:11:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://matrixprofile.org/categories/anomalies.xml</loc>
-  <lastmod>2020-08-27T20:10:00Z</lastmod>
+  <lastmod>2020-07-03T17:11:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://matrixprofile.org/categories/clustering.xml</loc>
-  <lastmod>2020-08-27T19:40:00Z</lastmod>
+  <lastmod>2020-07-17T15:59:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://matrixprofile.org/categories/discords.xml</loc>
-  <lastmod>2020-08-27T20:10:00Z</lastmod>
+  <lastmod>2020-07-03T17:11:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://matrixprofile.org/categories/hdbscan.xml</loc>
-  <lastmod>2020-08-27T19:40:00Z</lastmod>
+  <lastmod>2020-07-17T15:59:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://matrixprofile.org/categories/matrixprofile.xml</loc>
-  <lastmod>2020-09-09T02:13:00Z</lastmod>
+  <lastmod>2020-07-17T15:59:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://matrixprofile.org/categories/meet-the-team.xml</loc>
-  <lastmod>2020-08-27T19:40:00Z</lastmod>
+  <lastmod>2020-07-03T17:11:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://matrixprofile.org/categories/motifs.xml</loc>
-  <lastmod>2020-08-27T19:40:00Z</lastmod>
+  <lastmod>2020-07-03T17:11:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://matrixprofile.org/categories/python.xml</loc>
-  <lastmod>2020-09-09T02:13:00Z</lastmod>
+  <lastmod>2020-07-17T15:59:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://matrixprofile.org/categories/snippets.xml</loc>
-  <lastmod>2020-09-09T02:13:00Z</lastmod>
+  <lastmod>2020-09-14T00:50:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://matrixprofile.org/categories/tutorial.xml</loc>
-  <lastmod>2020-09-09T02:13:00Z</lastmod>
+  <lastmod>2020-07-17T15:59:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://matrixprofile.org/galleries/demo/rss.xml</loc>
-  <lastmod>2020-09-13T22:04:00Z</lastmod>
+  <lastmod>2020-09-14T00:50:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://matrixprofile.org/galleries/rss.xml</loc>
-  <lastmod>2020-09-13T22:04:00Z</lastmod>
+  <lastmod>2020-09-14T00:50:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://matrixprofile.org/rss.xml</loc>
-  <lastmod>2020-09-09T02:13:00Z</lastmod>
+  <lastmod>2020-07-17T15:59:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://matrixprofile.org/sitemap.xml</loc>
-  <lastmod>2020-09-13T22:04:00Z</lastmod>
+  <lastmod>2020-09-14T00:50:00Z</lastmod>
  </sitemap>
 </sitemapindex>
