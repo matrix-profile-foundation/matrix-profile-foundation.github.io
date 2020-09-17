@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Matrix Profile Foundation (Posts by Yue Lu)</title><link>https://matrixprofile.org/</link><description></description><atom:link href="https://matrixprofile.org/authors/yue-lu.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2020 &lt;a href="mailto:nowhere@mail.com"&gt;Matrix Profile Foundation&lt;/a&gt; </copyright><lastBuildDate>Mon, 14 Sep 2020 00:50:11 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>What are Time Series Snippets?</title><link>https://matrixprofile.org/posts/what-are-time-series-snippets/</link><dc:creator>Yue Lu</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Matrix Profile Foundation (Posts by Yue Lu)</title><link>https://matrixprofile.org/</link><description></description><atom:link href="https://matrixprofile.org/authors/yue-lu.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2020 &lt;a href="mailto:nowhere@mail.com"&gt;Matrix Profile Foundation&lt;/a&gt; </copyright><lastBuildDate>Thu, 17 Sep 2020 04:56:06 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>What are Time Series Snippets?</title><link>https://matrixprofile.org/posts/what-are-time-series-snippets/</link><dc:creator>Yue Lu</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="What-are-Time-Series-Snippets？"&gt;What are Time Series Snippets？&lt;a class="anchor-link" href="https://matrixprofile.org/posts/what-are-time-series-snippets/#What-are-Time-Series-Snippets%EF%BC%9F"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Time series snippets, first proposed in &lt;a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;amp;arnumber=8588817"&gt;[1]&lt;/a&gt;, describe the most "representative" subsequences in a time series. The main use of time series snippets is to find the patterns (i.e., subsequences) which occupy the majority of the time series in question, so as to summarize the data at a high level.&lt;/p&gt;
@@ -26,7 +26,7 @@
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h4 id="Internal-Bleeding-Dataset"&gt;Internal Bleeding Dataset&lt;a class="anchor-link" href="https://matrixprofile.org/posts/what-are-time-series-snippets/#Internal-Bleeding-Dataset"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;The first sample dataset for this tutorial is taken and modified from the internal bleeding dataset in &lt;a href="https://dl.acm.org/doi/pdf/10.5555/3122009.3176865"&gt;[2]&lt;/a&gt;. From this dataset, we extract the arterial blood pressure measurements of pigs before bleeding, which are sampled approximately every 0.04 seconds. In order to demonstrate the utility of snippets, we insert arterial blood pressure data from another pig after 4441.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://www.dropbox.com/s/7lc7u89y223h1cl/InternalBleeding.txt?dl=0"&gt;Click to download the dataset&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://github.com/LuYueee/UCR_Anomaly_Yue/blob/master/InternalBleeding.png?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://matrixprofile.org/images/Snippets-Internal-Bleeding.png"&gt;&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -46,7 +46,7 @@
 &lt;p&gt;&lt;img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Waveforms.svg/512px-Waveforms.svg.png"&gt;&lt;/p&gt;
 &lt;p&gt;In this dataset, sine wave signals range from 0 to 1256 and 2438 to 3693; square wave signals range from 1257 to 2037 and 3694 to 4474; and sawtooth signals range from 2038 to 2437 and 4475 to 4874.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://www.dropbox.com/s/9kfvfy4n2emldxs/SyntheticSignal.txt?dl=0"&gt;Click to download the dataset&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://github.com/LuYueee/UCR_Anomaly_Yue/blob/master/SyntheticSignal.png?raw=true"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://matrixprofile.org/images/Snippets-Synthetic-Signal.png"&gt;&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
