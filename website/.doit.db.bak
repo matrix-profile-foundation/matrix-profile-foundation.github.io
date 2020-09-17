@@ -561,3 +561,4 @@
 'render_pages:output/governance/index.html', (2849280, 3729)
 'copy_files:output/images/Snippets-Internal-Bleeding.png', (2863104, 296)
 'copy_files:output/images/Snippets-Synthetic-Signal.png', (2863616, 294)
+'copy_files:output/images/Discords-Power-Demand.png', (2864128, 288)
