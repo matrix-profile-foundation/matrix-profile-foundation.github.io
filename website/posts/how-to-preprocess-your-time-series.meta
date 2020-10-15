@@ -1,0 +1,9 @@
+.. title: How to Preprocess Your Time Series
+.. subtitle: Handling missing data and singular continuous values
+.. slug: how-to-preprocess-your-time-series
+.. date: 2020-10-03
+.. tags: tutorial,python,imputation,matrixprofile
+.. link:
+.. description: Have you used the Matrix Profile algorithms in the past to realize that your data is pretty dirty? Learn about our new preprocess module that assists with imputing missing data and handling the singular continuous value cases.
+.. type: text
+.. author: Yue Lu
