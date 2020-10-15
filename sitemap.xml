@@ -19,7 +19,7 @@
  </url>
  <url>
   <loc>https://matrixprofile.org/archive.html</loc>
-  <lastmod>2020-09-17T05:00:00Z</lastmod>
+  <lastmod>2020-10-15T05:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://matrixprofile.org/authors/</loc>
@@ -47,7 +47,7 @@
  </url>
  <url>
   <loc>https://matrixprofile.org/categories/</loc>
-  <lastmod>2020-09-17T04:56:00Z</lastmod>
+  <lastmod>2020-10-15T05:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://matrixprofile.org/categories/annotation-vectors/</loc>
@@ -68,6 +68,10 @@
  <url>
   <loc>https://matrixprofile.org/categories/hdbscan/</loc>
   <lastmod>2020-09-17T04:56:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://matrixprofile.org/categories/imputation/</loc>
+  <lastmod>2020-10-15T05:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://matrixprofile.org/categories/matrixprofile/</loc>
@@ -135,7 +139,7 @@
  </url>
  <url>
   <loc>https://matrixprofile.org/posts/</loc>
-  <lastmod>2020-09-17T04:56:00Z</lastmod>
+  <lastmod>2020-10-15T05:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://matrixprofile.org/posts/ECG-heartbeat-av/</loc>
@@ -154,8 +158,12 @@
   <lastmod>2020-09-17T04:56:00Z</lastmod>
  </url>
  <url>
+  <loc>https://matrixprofile.org/posts/how-to-preprocess-your-time-series/</loc>
+  <lastmod>2020-10-15T05:08:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://matrixprofile.org/posts/index-1.html</loc>
-  <lastmod>2020-09-17T04:56:00Z</lastmod>
+  <lastmod>2020-10-15T05:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://matrixprofile.org/posts/meet-andrew-van-benschoten/</loc>
